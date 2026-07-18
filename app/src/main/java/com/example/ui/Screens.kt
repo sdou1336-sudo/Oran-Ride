@@ -422,23 +422,10 @@ fun RiderHomeScreen(viewModel: OranRideViewModel) {
                 .clip(RoundedCornerShape(20.dp))
                 .border(1.dp, Slate100, RoundedCornerShape(20.dp))
         ) {
-            OranMap(
-                pickupLandmarkId = pickup?.id,
-                destinationLandmarkId = destination?.id,
-                onLandmarkSelected = { clicked ->
-                    // Smart cycling between pickup & destination
-                    if (pickup == null) {
-                        viewModel.pickupLandmark.value = clicked
-                    } else if (destination == null && clicked.id != pickup?.id) {
-                        viewModel.destinationLandmark.value = clicked
-                    } else {
-                        viewModel.pickupLandmark.value = clicked
-                        viewModel.destinationLandmark.value = null
-                    }
-                }
-            )
-        }
-
+            RealMap(
+    modifier = Modifier.fillMaxSize()
+    )
+}
         // Slide-up Booking Panel
         Card(
             modifier = Modifier
