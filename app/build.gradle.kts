@@ -72,6 +72,8 @@ googleServices { missingGoogleServicesStrategy = MissingGoogleServicesStrategy.W
 // This makes it easy to add them back in the future if needed.
 dependencies {
 implementation("org.osmdroid:osmdroid-android:6.1.18")
+implementation("org.osmdroid:osmdroid-wms:6.1.18")
+implementation("org.slf4j:slf4j-android:1.7.36")
  implementation(platform(libs.androidx.compose.bom))
   implementation(platform(libs.firebase.bom))
   // implementation(libs.accompanist.permissions)
