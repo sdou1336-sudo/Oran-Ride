@@ -1,0 +1,6 @@
+{
+  "name": "Oran Ride",
+  "description": "A high-fidelity native ride-sharing application for riders and drivers in Oran, Algeria, featuring real-time interactive map tracking, simulated live locations, dual driver/rider modes, history, and Firebase readiness.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
