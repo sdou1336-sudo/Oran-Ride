@@ -3,6 +3,9 @@ package com.example.ui
 import androidx.compose.animation.*
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.*
+import com.example.data.PlaceResult
+import com.example.data.RetrofitClient
+import kotlinx.coroutines.launch
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -283,7 +286,44 @@ fun RegisterScreen(viewModel: OranRideViewModel) {
             fontWeight = FontWeight.ExtraBold
         )
 
-        OutlinedTextField(
+        OutlinedTextField(if (searchResults.isNotEmpty()) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 12.dp)
+            .align(Alignment.TopCenter),
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = Color.White
+        )
+    ) {
+        Column(
+            modifier = Modifier.padding(8.dp)
+        ) {
+            searchResults.forEach { place ->
+
+                Text(
+                    text = place.display_name,
+                    color = Slate900,
+                    fontSize = 14.sp,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable {
+    searchText = place.display_name
+
+    selectedLat = place.lat.toDouble()
+    selectedLon = place.lon.toDouble()
+
+    searchResults = emptyList()
+}
+                            
+                        }
+                        .padding(12.dp)
+                )
+            }
+        }
+    }
+}
             value = name,
             onValueChange = { name = it },
             label = { Text("Full Name (الاسم الكامل)") },
@@ -366,8 +406,11 @@ fun RiderHomeScreen(viewModel: OranRideViewModel) {
     val category by viewModel.selectedCategory
 
     var showPickupDialog by remember { mutableStateOf(false) }
-    var showDestDialog by remember { mutableStateOf(false) }
-
+    var showDestDialog by remember { mutableStateOf(false) }var searchText by remember { mutableStateOf("") }
+var searchResults by remember { mutableStateOf<List<PlaceResult>>(emptyList()) }
+var selectedLat by remember { mutableStateOf<Double?>(null) }
+var selectedLon by remember { mutableStateOf<Double?>(null) }
+val scope = rememberCoroutineScope()
     Column(modifier = Modifier.fillMaxSize()) {
         // App bar
         Row(
@@ -422,9 +465,40 @@ fun RiderHomeScreen(viewModel: OranRideViewModel) {
                 .clip(RoundedCornerShape(20.dp))
                 .border(1.dp, Slate100, RoundedCornerShape(20.dp))
         ) {
-            RealMap(
-    modifier = Modifier.fillMaxSize()
-    )
+                modifier = Modifier.fillMaxSize()
+)RealMap(
+    modifier = Modifier.fillMaxSize(),
+    targetLat = selectedLat,
+    targetLon = selectedLon
+)
+
+OutlinedTextField(
+    value = searchText,
+    onValueChange = { text ->
+        searchText = text
+
+        if (text.length > 2) {
+            scope.launch {
+                try {
+                    searchResults = RetrofitClient.api.searchPlaces(text)
+                } catch (e: Exception) {
+                    searchResults = emptyList()
+                }
+            }
+        }
+    },
+    placeholder = {
+        Text("إلى أين؟ ابحث عن مكان")
+    },
+    leadingIcon = {
+        Icon(Icons.Filled.Search, "Search")
+    },
+    modifier = Modifier
+        .fillMaxWidth()
+        .padding(12.dp)
+        .align(Alignment.TopCenter),
+    shape = RoundedCornerShape(20.dp)
+)
 
 OutlinedTextField(
     value = "",
