@@ -1,6 +1,7 @@
-- name: بناء APK
-  run: ./gradlew assembleDebug
-  - name: إنشاء debug keystore
+- name: إعداد Java
+  uses: actions/setup-java@v4
+
+- name: إنشاء مخزن مفاتيح للتصحيح
   run: |
     keytool -genkeypair -v \
       -keystore debug.keystore \
@@ -11,3 +12,6 @@
       -keysize 2048 \
       -validity 10000 \
       -dname "CN=Android Debug,O=Android,C=US"
+
+- name: بناء APK
+  run: ./gradlew assembleDebug
