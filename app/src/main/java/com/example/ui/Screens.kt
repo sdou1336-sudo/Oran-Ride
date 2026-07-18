@@ -425,6 +425,20 @@ fun RiderHomeScreen(viewModel: OranRideViewModel) {
             RealMap(
     modifier = Modifier.fillMaxSize()
     )
+
+OutlinedTextField(
+    value = "",
+    onValueChange = {},
+    placeholder = { Text("إلى أين؟ ابحث عن مكان") },
+    leadingIcon = {
+        Icon(Icons.Filled.Search, "Search")
+    },
+    modifier = Modifier
+        .fillMaxWidth()
+        .padding(12.dp)
+        .align(Alignment.TopCenter),
+    shape = RoundedCornerShape(20.dp)
+)
 }
         // Slide-up Booking Panel
         Card(
