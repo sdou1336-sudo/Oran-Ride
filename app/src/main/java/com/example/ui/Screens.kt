@@ -437,9 +437,14 @@ OutlinedTextField(
         .fillMaxWidth()
         .padding(12.dp)
         .align(Alignment.TopCenter),
-    shape = RoundedCornerShape(20.dp)
+   shape = RoundedCornerShape(20.dp),
+colors = OutlinedTextFieldDefaults.colors(
+    focusedContainerColor = Color.White,
+    unfocusedContainerColor = Color.White,
+    focusedBorderColor = TaxiYellow,
+    unfocusedBorderColor = Slate100
 )
-}
+)
         // Slide-up Booking Panel
         Card(
             modifier = Modifier
