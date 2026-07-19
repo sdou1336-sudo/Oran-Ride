@@ -3,9 +3,6 @@ package com.example.ui
 import androidx.compose.animation.*
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.*
-import com.example.data.PlaceResult
-import com.example.data.RetrofitClient
-import kotlinx.coroutines.launch
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -286,44 +283,7 @@ fun RegisterScreen(viewModel: OranRideViewModel) {
             fontWeight = FontWeight.ExtraBold
         )
 
-        OutlinedTextField(if (searchResults.isNotEmpty()) {
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 12.dp)
-            .align(Alignment.TopCenter),
-        shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(
-            containerColor = Color.White
-        )
-    ) {
-        Column(
-            modifier = Modifier.padding(8.dp)
-        ) {
-            searchResults.forEach { place ->
-
-                Text(
-                    text = place.display_name,
-                    color = Slate900,
-                    fontSize = 14.sp,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clickable {
-    searchText = place.display_name
-
-    selectedLat = place.lat.toDouble()
-    selectedLon = place.lon.toDouble()
-
-    searchResults = emptyList()
-}
-                            
-                        }
-                        .padding(12.dp)
-                )
-            }
-        }
-    }
-}
+        OutlinedTextField(
             value = name,
             onValueChange = { name = it },
             label = { Text("Full Name (الاسم الكامل)") },
@@ -400,17 +360,28 @@ fun RegisterScreen(viewModel: OranRideViewModel) {
 // 3. Rider Home (Map and Booking Panel)
 @Composable
 fun RiderHomeScreen(viewModel: OranRideViewModel) {
+    val context = LocalContext.current
+
+    LaunchedEffect(Unit) {
+        viewModel.startGps(context)
+    }
+
+    LaunchedEffect(Unit) {
+        viewModel.startRiderLocation()
+    }
+
     val currentUser by viewModel.currentUser.collectAsState()
     val pickup by viewModel.pickupLandmark
     val destination by viewModel.destinationLandmark
     val category by viewModel.selectedCategory
 
     var showPickupDialog by remember { mutableStateOf(false) }
-    var showDestDialog by remember { mutableStateOf(false) }var searchText by remember { mutableStateOf("") }
-var searchResults by remember { mutableStateOf<List<PlaceResult>>(emptyList()) }
-var selectedLat by remember { mutableStateOf<Double?>(null) }
-var selectedLon by remember { mutableStateOf<Double?>(null) }
-val scope = rememberCoroutineScope()
+    var showDestDialog by remember { mutableStateOf(false) }
+
+    var searchText by remember { mutableStateOf("") }
+    var showSearchResults by remember { mutableStateOf(true) }
+    val searchResults by viewModel.searchResults.collectAsState()
+
     Column(modifier = Modifier.fillMaxSize()) {
         // App bar
         Row(
@@ -465,61 +436,76 @@ val scope = rememberCoroutineScope()
                 .clip(RoundedCornerShape(20.dp))
                 .border(1.dp, Slate100, RoundedCornerShape(20.dp))
         ) {
-                modifier = Modifier.fillMaxSize()
-)RealMap(
+            RealMap(
     modifier = Modifier.fillMaxSize(),
-    targetLat = selectedLat,
-    targetLon = selectedLon
-)
+    targetLat = destination?.gridX?.toDouble(),
+    targetLon = destination?.gridY?.toDouble(),
+    riderLat = viewModel.riderLocation.collectAsState().value?.first?.toDouble(),
+    riderLon = viewModel.riderLocation.collectAsState().value?.second?.toDouble()
+    )
 
 OutlinedTextField(
     value = searchText,
-    onValueChange = { text ->
-        searchText = text
-
-        if (text.length > 2) {
-            scope.launch {
-                try {
-                    searchResults = RetrofitClient.api.searchPlaces(text)
-                } catch (e: Exception) {
-                    searchResults = emptyList()
-                }
-            }
-        }
+    onValueChange = {
+        searchText = it
+        viewModel.searchPlaces(it)
     },
-    placeholder = {
-        Text("إلى أين؟ ابحث عن مكان")
-    },
-    leadingIcon = {
-        Icon(Icons.Filled.Search, "Search")
-    },
-    modifier = Modifier
-        .fillMaxWidth()
-        .padding(12.dp)
-        .align(Alignment.TopCenter),
-    shape = RoundedCornerShape(20.dp)
-)
-
-OutlinedTextField(
-    value = "",
-    onValueChange = {},
     placeholder = { Text("إلى أين؟ ابحث عن مكان") },
     leadingIcon = {
         Icon(Icons.Filled.Search, "Search")
     },
+    trailingIcon = {
+        IconButton(onClick = {
+            viewModel.searchPlaces(searchText)
+        }) {
+            Icon(Icons.Filled.Search, "بحث")
+        }
+    },
     modifier = Modifier
         .fillMaxWidth()
         .padding(12.dp)
-        .align(Alignment.TopCenter),
-   shape = RoundedCornerShape(20.dp),
-colors = OutlinedTextFieldDefaults.colors(
-    focusedContainerColor = Color.White,
-    unfocusedContainerColor = Color.White,
-    focusedBorderColor = TaxiYellow,
-    unfocusedBorderColor = Slate100
+        ,
+    colors = OutlinedTextFieldDefaults.colors(
+        focusedContainerColor = Color.White,
+        unfocusedContainerColor = Color.White,
+        focusedBorderColor = AlgerianGreen,
+        unfocusedBorderColor = Slate500
+    ),
+    shape = RoundedCornerShape(20.dp)
 )
-)
-        // Slide-up Booking Panel
+}
+    
+    // Search Results Dropdown
+    val searchResults by viewModel.searchResults.collectAsState()
+
+    if (searchResults.isNotEmpty()) {
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp)
+                ,
+            colors = CardDefaults.cardColors(containerColor = Color.White)
+        ) {
+            LazyColumn {
+                items(searchResults.take(5)) { place ->
+                    Text(
+                        text = place.display_name,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable {
+                                viewModel.selectSearchPlace(place)
+                                searchText = place.display_name
+                            }
+                            .padding(12.dp),
+                        color = Slate900
+                    )
+                }
+            }
+        }
+    }
+
+    
+// Slide-up Booking Panel
         Card(
             modifier = Modifier
                 .fillMaxWidth()

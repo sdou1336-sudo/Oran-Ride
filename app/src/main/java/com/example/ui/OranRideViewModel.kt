@@ -1,4 +1,5 @@
 package com.example.ui
+import android.content.Context
 
 import android.app.Application
 import android.util.Log
@@ -8,6 +9,10 @@ import androidx.lifecycle.viewModelScope
 import com.example.data.OranRideRepository
 import com.example.data.RideEntity
 import com.example.data.UserEntity
+import com.example.data.PlaceResult
+
+import com.example.data.RetrofitClient
+import com.example.data.oranPlaces
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -45,6 +50,18 @@ class OranRideViewModel(application: Application) : AndroidViewModel(application
         "Moto" to 0.7
     )
 
+
+    // Start real GPS tracking
+    fun startRiderLocation() {
+        val helper = LocationHelper(getApplication())
+        helper.start { lat, lon ->
+            _riderLocation.value = Pair(
+                lat.toFloat(),
+                lon.toFloat()
+            )
+        }
+    }
+
     // Live driver coordinates (Grid coordinates 0 to 100)
     private val _driverLocation = MutableStateFlow<Pair<Float, Float>?>(null)
     val driverLocation: StateFlow<Pair<Float, Float>?> = _driverLocation.asStateFlow()
@@ -65,6 +82,8 @@ class OranRideViewModel(application: Application) : AndroidViewModel(application
 
     // Simulation job handler
     private var simulationJob: Job? = null
+
+    private var locationHelper: LocationHelper? = null
 
     // Incoming simulated request for Driver mode
     private val _incomingDriverRequest = MutableStateFlow<RideEntity?>(null)
@@ -383,4 +402,66 @@ class OranRideViewModel(application: Application) : AndroidViewModel(application
             loadHistory()
         }
     }
+    // ===== Place Search =====
+
+    private val _searchResults = MutableStateFlow<List<PlaceResult>>(emptyList())
+    val searchResults: StateFlow<List<PlaceResult>> = _searchResults.asStateFlow()
+
+
+    fun selectSearchPlace(place: PlaceResult) {
+        val lat = place.lat.toFloatOrNull() ?: return
+        val lon = place.lon.toFloatOrNull() ?: return
+
+        val landmark = OranLandmark(
+            id = "search_${lat}_${lon}",
+            name = place.display_name,
+            gridX = ((lat - 35.60f) * 250f).coerceIn(0f,100f),
+            gridY = ((lon + 0.70f) * 200f).coerceIn(0f,100f),
+            description = "Search result"
+        )
+
+        destinationLandmark.value = landmark
+    }
+
+    fun searchPlaces(query: String) {
+        if (query.isBlank()) {
+            _searchResults.value = emptyList()
+            return
+        }
+
+        viewModelScope.launch {
+            try {
+                val onlineResults = RetrofitClient.api.searchPlaces(
+                    "$query, Oran, Algeria"
+                )
+
+                val localResults = oranPlaces
+                    .filter {
+                        it.name.contains(query, ignoreCase = true)
+                    }
+                    .map {
+                        PlaceResult(
+                            display_name = it.name,
+                            lat = it.lat.toString(),
+                            lon = it.lon.toString()
+                        )
+                    }
+
+                _searchResults.value = localResults + onlineResults
+            } catch (e: Exception) {
+                Log.e(TAG, "Place search failed", e)
+                _searchResults.value = emptyList()
+            }
+        }
+    }
+    
+    fun startGps(context: Context) {
+        locationHelper = LocationHelper(context)
+
+        locationHelper?.start { lat, lon ->
+            _riderLocation.value =
+                Pair(lat.toFloat(), lon.toFloat())
+        }
+    }
 }
+

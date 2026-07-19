@@ -14,7 +14,8 @@ interface PlaceSearchApi {
     @GET("search")
     suspend fun searchPlaces(
         @Query("q") query: String,
-        @Query("format") format: String = "json",
-        @Query("limit") limit: Int = 10
+@Query("format") format: String = "json",
+@Query("limit") limit: Int = 10,
+@Query("addressdetails") addressDetails: Int = 1
     ): List<PlaceResult>
 }
