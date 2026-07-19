@@ -438,8 +438,8 @@ fun RiderHomeScreen(viewModel: OranRideViewModel) {
         ) {
             RealMap(
     modifier = Modifier.fillMaxSize(),
-    targetLat = destination?.gridX?.toDouble(),
-    targetLon = destination?.gridY?.toDouble(),
+    targetLat = viewModel.searchTargetLat.value,
+    targetLon = viewModel.searchTargetLon.value,
     riderLat = viewModel.riderLocation.collectAsState().value?.first?.toDouble(),
     riderLon = viewModel.riderLocation.collectAsState().value?.second?.toDouble()
     )
