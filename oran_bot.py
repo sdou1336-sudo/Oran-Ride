@@ -1,57 +1,49 @@
 import os
-import shutil
-from datetime import datetime
 
-TARGET = "app/src/main/java/com/example/ui/RealMap.kt"
+ERROR_FILE = "build_error.log"
 
-def backup_file():
-    if os.path.exists(TARGET):
-        name = "backup_RealMap_" + datetime.now().strftime("%H%M%S") + ".kt"
-        shutil.copy(TARGET, name)
-        print("✅ نسخة احتياطية:", name)
-
-def inspect_map():
-    if not os.path.exists(TARGET):
-        print("❌ الملف غير موجود")
+def analyze_error():
+    if not os.path.exists(ERROR_FILE):
+        print("❌ ملف build_error.log غير موجود")
         return
 
-    text = open(TARGET, encoding="utf-8").read()
+    error = open(ERROR_FILE, encoding="utf-8").read()
 
-    print("\n🔎 تحليل RealMap.kt")
-    print("Marker موجود:", "Marker" in text)
-    print("animateTo موجود:", "animateTo" in text)
-    print("MapView موجود:", "MapView" in text)
+    if not error.strip():
+        print("⚠️ ملف الأخطاء فارغ")
+        return
 
-def prepare():
-    print("""
-🛠️ المهمة:
-إضافة Marker للوجهة
+    print("\n🔎 تحليل خطأ البناء:")
 
-الملف:
-RealMap.kt
+    if "AAPT2" in error:
+        print("المشكلة: خطأ AAPT2")
+        print("الاقتراح: مراجعة إعدادات Android Gradle")
 
-الحالة:
-- سيتم تجهيز التعديل فقط
-- لا يوجد تغيير تلقائي بعد
-""")
+    elif "Kotlin" in error or "compile" in error:
+        print("المشكلة: خطأ Kotlin")
+        print("الاقتراح: مراجعة ملفات .kt")
 
-def main():
-    print("🤖 Oran Bot v10")
-    print("- فحص الخريطة")
-    print("- جهز Marker")
-    print("- exit")
+    elif "Gradle" in error or "BUILD FAILED" in error:
+        print("المشكلة: Gradle Build")
+        print("الاقتراح: مراجعة dependencies والإعدادات")
 
-    while True:
-        cmd=input("BOT> ")
+    else:
+        print("لم يتم تحديد السبب تلقائيًا")
+        print("أول أسطر الخطأ:")
+        print(error[:500])
 
-        if cmd=="exit":
-            break
-        elif cmd=="فحص الخريطة":
-            inspect_map()
-        elif cmd=="جهز Marker":
-            backup_file()
-            prepare()
-        else:
-            print("❓ أمر غير معروف")
+print("🤖 Oran Bot v12 - Batman")
+print("- حلل خطأ البناء")
+print("- exit")
 
-main()
+while True:
+    cmd = input("BATMAN> ")
+
+    if cmd == "exit":
+        break
+
+    elif cmd == "حلل خطأ البناء":
+        analyze_error()
+
+    else:
+        print("❓ أمر غير معروف")
