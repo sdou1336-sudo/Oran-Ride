@@ -4,7 +4,7 @@ from batman.tasks import prepare_task
 from batman.planner import plan_task
 from batman.brain import execute
 from batman.approval import approve
-from batman.executor import execute_patch
+from batman.executor import execute_patch, apply_change
 
 def run():
     print("🦇 Batman Framework v20")
@@ -17,7 +17,11 @@ def run():
     while True:
         cmd = input("BATMAN> ").strip()
 
-        if cmd == "نفذ التعديل":
+        if cmd.startswith("طبق تعديل"):
+            print("🛠️ المنفذ جاهز")
+            print("سيتم ربط ملف التعديل في المرحلة القادمة")
+
+        elif cmd == "نفذ التعديل":
             execute_patch()
 
         elif cmd == "وافق":
