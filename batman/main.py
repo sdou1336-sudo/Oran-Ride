@@ -1,11 +1,8 @@
+from batman.analyzer import analyze_project
+
 def run():
-    print("🦇 Batman Framework v15")
-    print("الوحدات:")
-    print("- analyzer")
-    print("- build")
-    print("- tasks")
-    print("- knowledge")
-    print("- backups")
+    print("🦇 Batman Framework v16")
+    print("- حلل المشروع")
     print("- exit")
 
     while True:
@@ -15,4 +12,8 @@ def run():
             print("👋 إلى اللقاء")
             break
 
-        print("🚧 هذا الأمر سيضاف في الإصدارات القادمة.")
+        elif cmd == "حلل المشروع":
+            analyze_project()
+
+        else:
+            print("❓ أمر غير معروف")
