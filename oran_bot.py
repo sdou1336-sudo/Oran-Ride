@@ -1,12 +1,19 @@
 import os
-import subprocess
 
-def run(cmd):
-    print(">>", cmd)
-    os.system(cmd)
+PLAN_FILE = "indrive_like_plan.md"
 
-print("🤖 Oran Bot")
-print("اكتب الأمر ثم اضغط Enter")
+def read_plan():
+    if os.path.exists(PLAN_FILE):
+        print("\n📋 Oran-Ride Plan:\n")
+        with open(PLAN_FILE, "r", encoding="utf-8") as f:
+            print(f.read())
+    else:
+        print("❌ ملف الخطة غير موجود")
+
+print("🤖 Oran Bot v2")
+print("الأوامر:")
+print("- اقرأ الخطة")
+print("- exit")
 
 while True:
     cmd = input("BOT> ")
@@ -14,9 +21,8 @@ while True:
     if cmd == "exit":
         break
 
-    if cmd.startswith("git"):
-        run(cmd)
-    else:
-        print("الأمر محفوظ للتطوير: ", cmd)
+    elif cmd == "اقرأ الخطة":
+        read_plan()
 
-print("تم إيقاف الروبوت")
+    else:
+        print("❓ أمر غير معروف")
