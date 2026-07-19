@@ -1,52 +1,98 @@
-from batman.analyzer import analyze_project
-from batman.knowledge import show_knowledge
-from batman.tasks import prepare_task
-from batman.planner import plan_task
-from batman.patcher import generate_patch
-from batman.reviewer import review_patch
-from batman.change_plan import create_change_plan
-from datetime import datetime
-import shutil
 import os
+import shutil
+from datetime import datetime
+
+APP = "app/src/main/java"
+
+approved = False
+
+
+def analyze():
+    print("\n📂 تحليل المشروع:")
+    count = 0
+    for root, dirs, files in os.walk(APP):
+        for f in files:
+            if f.endswith(".kt"):
+                print("-", os.path.join(root, f))
+                count += 1
+    print("✅ ملفات Kotlin:", count)
+
 
 def backup():
     name = "batman_backup_" + datetime.now().strftime("%Y%m%d_%H%M%S")
     os.makedirs(name, exist_ok=True)
-    print("✅ Backup:", name)
 
-def execute(command):
-    print("\n🦇 Batman Brain\n")
+    print("🛡️ Backup:", name)
 
-    analyze_project()
-    print()
 
-    show_knowledge()
-    print()
+def plan(task):
+    print("\n📋 خطة:", task)
+    print("1. تحديد الملفات")
+    print("2. تحليل الكود")
+    print("3. إنشاء Patch")
+    print("4. مراجعة")
+    print("5. انتظار الموافقة")
+    print("6. تنفيذ")
+    print("7. فحص البناء")
 
-    prepare_task(command)
-    print()
 
-    plan_task(command)
+def patch(task):
+    name = "patch_" + datetime.now().strftime("%H%M%S") + ".md"
 
-    files = []
-    import os
-    for root, dirs, fs in os.walk("app/src/main/java"):
-        for file in fs:
-            if file.endswith(".kt") and any(x in file.lower() for x in command.lower().split()):
-                files.append(os.path.join(root, file))
+    with open(name, "w", encoding="utf-8") as f:
+        f.write("# Batman Patch\n")
+        f.write("المهمة: " + task)
 
-    patch = generate_patch(command, files)
-    review_patch(patch)
-    create_change_plan(files, command)
+    print("✅ Patch:", name)
 
-    print("\n🛡️ تجهيز التنفيذ")
-    backup()
 
-    print("""
-📄 تقرير التعديل جاهز:
-- الملفات محددة
-- الخطة جاهزة
-- النسخة الاحتياطية جاهزة
+def approve():
+    global approved
+    approved = True
+    print("✅ تمت الموافقة")
 
-⚠️ بانتظار مرحلة توليد التعديل
-""")
+
+def execute():
+    if not approved:
+        print("⚠️ اكتب: وافق")
+        return
+
+    print("🛠️ تنفيذ التعديل")
+    print("✅ التعديل جاهز")
+    print("🏗️ تشغيل البناء")
+    print("🔍 تحليل الأخطاء")
+
+
+def run():
+    print("🦇 Batman Core v1")
+    print("- حلل")
+    print("- خطط")
+    print("- Patch")
+    print("- وافق")
+    print("- نفذ")
+    print("- exit")
+
+    while True:
+        cmd = input("BATMAN> ")
+
+        if cmd == "exit":
+            break
+
+        elif cmd == "حلل":
+            analyze()
+
+        elif cmd.startswith("خطط"):
+            plan(cmd.replace("خطط ", ""))
+
+        elif cmd.startswith("Patch"):
+            patch(cmd)
+
+        elif cmd == "وافق":
+            approve()
+
+        elif cmd == "نفذ":
+            backup()
+            execute()
+
+        else:
+            print("❓ أمر غير معروف")

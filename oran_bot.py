@@ -1,4 +1,4 @@
-from batman.main import run
+from batman.brain import run
 
 if __name__ == "__main__":
     run()
