@@ -447,6 +447,7 @@ class OranRideViewModel(application: Application) : AndroidViewModel(application
                         )
                     }
 
+                Log.d(TAG, "SEARCH RESULT: local=${localResults.size} online=${onlineResults.size}")
                 _searchResults.value = localResults + onlineResults
             } catch (e: Exception) {
                 Log.e(TAG, "Place search failed", e)
