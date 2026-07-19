@@ -354,13 +354,5 @@ fun OranMap(
 }
 
 
-// تحسين الخريطة
+// BATMAN_MAP_UPDATE
 // تحسينات الخريطة القادمة: Marker + Camera + Route
-
-// Driver Marker Enhancement
-// تحسين مؤشر السائق
-// سيتم ربطه لاحقاً بالحركة الحية والاتجاه
-
-// Driver Marker Enhancement
-// تحسين مؤشر السائق
-// سيتم ربطه لاحقاً بالحركة الحية والاتجاه

@@ -1,66 +1,60 @@
 import os
-import datetime
+import shutil
+from datetime import datetime
 
 approved = False
 
-def analyze():
-    print("📂 تحليل المشروع")
-    count = 0
-    for root, _, files in os.walk("app"):
-        for f in files:
-            if f.endswith(".kt"):
-                print("-", f)
-                count += 1
-    print("✅ Kotlin:", count)
+def backup_file(path):
+    if os.path.exists(path):
+        b = "backup_" + datetime.now().strftime("%H%M%S")
+        os.makedirs(b, exist_ok=True)
+        shutil.copy(path, b)
+        print("🛡️ Backup:", b)
 
-def prepare(task):
-    print("\n📋 المهمة:", task)
-    print("1- تحليل الملفات")
-    print("2- Backup")
-    print("3- Patch")
-    print("4- مراجعة")
-    print("5- تنفيذ")
-    print("6- Build")
+def edit_file(path, old, new):
+    global approved
 
-def patch(task):
-    name = "patch_" + datetime.datetime.now().strftime("%H%M%S") + ".md"
-    open(name,"w").write("Task: "+task)
-    print("✅ Patch:", name)
+    if not approved:
+        print("⚠️ اكتب وافق أولاً")
+        return
 
-def backup():
-    print("🛡️ Backup جاهز")
+    if not os.path.exists(path):
+        print("❌ الملف غير موجود")
+        return
+
+    backup_file(path)
+
+    data = open(path, encoding="utf-8").read()
+
+    if old not in data:
+        print("⚠️ لم يجد مكان التعديل")
+        return
+
+    data = data.replace(old, new, 1)
+
+    open(path, "w", encoding="utf-8").write(data)
+
+    print("✅ تم تعديل:", path)
 
 def approve():
     global approved
     approved = True
-    print("✅ تمت الموافقة")
-
-def execute():
-    if not approved:
-        print("⚠️ اكتب وافق")
-        return
-    backup()
-    print("🛠️ تنفيذ التعديل")
-    print("🏗️ Build")
-    print("🔍 تحليل الأخطاء")
+    print("✅ موافق")
 
 def run():
-    print("🦇 Core v1")
+    print("🦇 Editor v1")
+
     while True:
-        cmd=input("CORE> ")
+        cmd=input("> ")
 
         if cmd=="exit":
-            print("👋 خروج")
             break
-        elif cmd=="حلل":
-            analyze()
-        elif cmd.startswith("خطط"):
-            prepare(cmd[5:])
-        elif cmd.startswith("Patch"):
-            patch(cmd)
+
         elif cmd=="وافق":
             approve()
-        elif cmd=="نفذ":
-            execute()
-        else:
-            print("❓ أمر غير معروف")
+
+        elif cmd=="اختبر":
+            edit_file(
+            "app/src/main/java/com/example/ui/OranMap.kt",
+            "// BATMAN_MAP_UPDATE",
+            "// تحسين الخريطة")
