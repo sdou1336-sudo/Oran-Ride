@@ -39,7 +39,10 @@ class OranRideViewModel(application: Application) : AndroidViewModel(application
 
     // Selected Landmarks for Booking
     val pickupLandmark = mutableStateOf<OranLandmark?>(oranLandmarks[1]) // Default: Front de Mer
-    val destinationLandmark = mutableStateOf<OranLandmark?>(oranLandmarks[0]) // Default: Fort Santa Cruz
+    val destinationLandmark = mutableStateOf<OranLandmark?>(oranLandmarks[0])
+
+    val searchTargetLat = mutableStateOf<Double?>(null)
+    val searchTargetLon = mutableStateOf<Double?>(null) // Default: Fort Santa Cruz
 
     // Category Select
     val selectedCategory = mutableStateOf("Standard") // Standard, Luxe, Comfort, Moto
@@ -421,6 +424,8 @@ class OranRideViewModel(application: Application) : AndroidViewModel(application
         )
 
         destinationLandmark.value = landmark
+        searchTargetLat.value = lat.toDouble()
+        searchTargetLon.value = lon.toDouble()
     }
 
     fun searchPlaces(query: String) {
