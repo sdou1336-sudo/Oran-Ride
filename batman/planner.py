@@ -1,11 +1,41 @@
-from batman.tasks import prepare_task
+from batman.tasks import KEYWORDS
+import os
+
+ROOT = "app/src/main/java"
 
 def plan_task(task):
-    print(f"\n📋 خطة ذكية: {task}\n")
-    print("1. البحث عن الملفات المرتبطة.")
-    print("2. تحليل كل ملف.")
-    print("3. تحديد التعديلات المطلوبة.")
-    print("4. إنشاء نسخة احتياطية.")
-    print("5. انتظار موافقة المستخدم.")
-    print("\n📂 الملفات المرشحة:")
-    prepare_task(task)
+    print(f"\n📋 خطة تعديل: {task}\n")
+
+    words = KEYWORDS.get(task)
+
+    if not words:
+        print("❌ المهمة غير معروفة")
+        return
+
+    for root, dirs, files in os.walk(ROOT):
+        for f in sorted(files):
+            name = f.lower()
+
+            if any(word in name for word in words):
+                print(f"📄 {f}")
+
+                if "map" in name:
+                    print("  - تحسين الخريطة")
+                    print("  - تحسين Marker")
+
+                elif "location" in name:
+                    print("  - مراجعة تحديث الموقع")
+
+                elif "route" in name:
+                    print("  - تحسين المسار")
+
+                elif "search" in name or "place" in name:
+                    print("  - تحسين البحث")
+
+                elif "repository" in name:
+                    print("  - تحديث منطق البيانات")
+
+                elif "database" in name:
+                    print("  - مراجعة قاعدة البيانات")
+
+                print()
