@@ -1,4 +1,6 @@
 import os
+import shutil
+from datetime import datetime
 
 PLAN_FILE = "indrive_like_plan.md"
 
@@ -11,29 +13,32 @@ def load_tasks():
                 tasks.append(line[1:].strip())
     return tasks
 
-def project_files():
-    files=[]
-    for root,dirs,names in os.walk("."):
-        for name in names:
-            if name.endswith(".kt"):
-                path=os.path.join(root,name)
+def find_files():
+    result=[]
+    for root,dirs,files in os.walk("."):
+        for file in files:
+            if file.endswith(".kt"):
+                path=os.path.join(root,file)
                 text=open(path,encoding="utf-8",errors="ignore").read()
                 score=0
 
-                if "RealMap" in text:
-                    score+=3
-                if "MapView" in text:
-                    score+=3
-                if "GeoPoint" in text:
-                    score+=2
-                if "Search" in text:
-                    score+=1
-                if "Marker" in text:
-                    score+=1
+                for word in ["RealMap","MapView","GeoPoint","Search","Marker"]:
+                    if word in text:
+                        score+=1
 
                 if score:
-                    files.append((score,path))
-    return sorted(files,reverse=True)
+                    result.append((score,path))
+    return sorted(result,reverse=True)
+
+def backup(files):
+    folder="backup_"+datetime.now().strftime("%Y%m%d_%H%M%S")
+    os.makedirs(folder)
+
+    for _,file in files:
+        if os.path.exists(file):
+            shutil.copy(file,folder)
+
+    print("✅ تم إنشاء نسخة احتياطية:",folder)
 
 def prepare(num):
     tasks=load_tasks()
@@ -42,33 +47,20 @@ def prepare(num):
         print("❌ رقم غير موجود")
         return
 
-    task=tasks[num-1]
+    print("\n🛠️ المهمة:")
+    print(tasks[num-1])
 
-    print("\n🛠️ تجهيز المهمة:")
-    print(task)
+    files=find_files()
 
-    print("\n📂 الملفات التي ستراجع:")
-    for score,path in project_files()[:5]:
-        print(f"- {path} (أهمية {score})")
+    print("\n📂 الملفات:")
+    for score,path in files[:5]:
+        print("-",path)
 
-    print("\n📋 اقتراح التنفيذ:")
-    
-    if "الخريطة" in task:
-        print("- مراجعة RealMap.kt")
-        print("- إضافة أو تحسين Marker")
-        print("- ربط إحداثيات البحث بالخريطة")
+    backup(files)
 
-    elif "بحث" in task:
-        print("- مراجعة Screens.kt")
-        print("- مراجعة ViewModel البحث")
+    print("\n⚠️ جاهز للتعديل، لكن لم يتم تغيير أي كود")
 
-    else:
-        print("- يحتاج تحليل إضافي")
-
-    print("\n⚠️ لم يتم تعديل أي ملف بعد")
-
-print("🤖 Oran Bot v7")
-print("- اعرض المهام")
+print("🤖 Oran Bot v8")
 print("- جهز المهمة رقم")
 print("- exit")
 
@@ -77,10 +69,6 @@ while True:
 
     if cmd=="exit":
         break
-
-    elif cmd=="اعرض المهام":
-        for i,t in enumerate(load_tasks(),1):
-            print(f"{i}- {t}")
 
     elif cmd.startswith("جهز المهمة"):
         try:
