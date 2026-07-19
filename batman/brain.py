@@ -4,6 +4,7 @@ from batman.tasks import prepare_task
 from batman.planner import plan_task
 from batman.patcher import generate_patch
 from batman.reviewer import review_patch
+from batman.change_plan import create_change_plan
 from datetime import datetime
 import shutil
 import os
@@ -36,6 +37,7 @@ def execute(command):
 
     patch = generate_patch(command, files)
     review_patch(patch)
+    create_change_plan(files, command)
 
     print("\n🛡️ تجهيز التنفيذ")
     backup()
