@@ -10,6 +10,7 @@ import org.osmdroid.tileprovider.tilesource.TileSourceFactory
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.Polyline
+import org.osmdroid.views.overlay.Marker
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -32,6 +33,13 @@ fun RealMap(
             MapView(context).apply {
                 setTileSource(TileSourceFactory.MAPNIK)
                 setMultiTouchControls(true)
+
+                if (targetLat != null && targetLon != null) {
+                    val marker = Marker(this)
+                    marker.position = GeoPoint(targetLat, targetLon)
+                    marker.title = "Destination"
+                    overlays.add(marker)
+                }
 
                 controller.setZoom(13.5)
 
