@@ -1,4 +1,5 @@
 from batman.approval import status
+from batman.patch_reader import read_patch
 import shutil
 import os
 from datetime import datetime
