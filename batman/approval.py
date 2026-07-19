@@ -1,9 +1,10 @@
-approved = False
+from pathlib import Path
+
+FILE = Path(".approval")
 
 def approve():
-    global approved
-    approved = True
+    FILE.write_text("approved", encoding="utf-8")
     print("✅ تمت الموافقة على التعديل")
 
 def status():
-    return approved
+    return FILE.exists()

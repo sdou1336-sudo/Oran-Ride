@@ -38,6 +38,25 @@ def execute_patch():
         print("⚠️ يجب كتابة: وافق أولاً")
         return
 
-    print("🛠️ بدء تنفيذ التعديل")
-    print("✅ الموافقة موجودة")
-    print("📂 تجهيز الملفات")
+    patches = [f for f in os.listdir(".") if f.startswith("patch_") and f.endswith(".md")]
+
+    if not patches:
+        print("❌ لا يوجد Patch")
+        return
+
+    patch = sorted(patches)[-1]
+
+    print("🛠️ تنفيذ:", patch)
+
+    files = read_patch(patch)
+
+    if not files:
+        print("⚠️ لا توجد ملفات")
+        return
+
+    print("📂 الملفات جاهزة للتعديل")
+
+    for file in files:
+        print("➡️ سيتم تعديل:", file)
+
+    print("✅ مرحلة التنفيذ الحقيقي جاهزة")

@@ -1,8 +1,10 @@
 import os
+from pathlib import Path
 import shutil
 from datetime import datetime
 
 approved = False
+patch_file = Path('.patch_selected').read_text() if Path('.patch_selected').exists() else None
 
 def backup_file(path):
     if os.path.exists(path):
@@ -11,50 +13,54 @@ def backup_file(path):
         shutil.copy(path, b)
         print("🛡️ Backup:", b)
 
-def edit_file(path, old, new):
-    global approved
-
-    if not approved:
-        print("⚠️ اكتب وافق أولاً")
-        return
-
-    if not os.path.exists(path):
-        print("❌ الملف غير موجود")
-        return
-
-    backup_file(path)
-
-    data = open(path, encoding="utf-8").read()
-
-    if old not in data:
-        print("⚠️ لم يجد مكان التعديل")
-        return
-
-    data = data.replace(old, new, 1)
-
-    open(path, "w", encoding="utf-8").write(data)
-
-    print("✅ تم تعديل:", path)
-
 def approve():
     global approved
     approved = True
     print("✅ موافق")
 
+def execute():
+    global patch_file
+
+    if not approved:
+        print("⚠️ اكتب وافق أولاً")
+        return
+
+    if not patch_file:
+        print("⚠️ لا يوجد Patch")
+        return
+
+    print("🛠️ تنفيذ Patch:", patch_file)
+
+    with open(patch_file, encoding="utf-8") as f:
+        for line in f:
+            if line.startswith("- app/"):
+                file = line.strip("- ").strip()
+                print("📂 ملف:", file)
+
+    print("✅ جاهز للتعديل الحقيقي")
+
 def run():
-    print("🦇 Editor v1")
+    print("🦇 Editor v2")
 
     while True:
-        cmd=input("> ")
+        cmd = input("> ")
 
-        if cmd=="exit":
+        if cmd == "exit":
             break
 
-        elif cmd=="وافق":
+        elif cmd == "وافق":
             approve()
 
-        elif cmd=="اختبر":
-            edit_file(
-            "app/src/main/java/com/example/ui/OranMap.kt",
-            "// BATMAN_MAP_UPDATE",
-            "// تحسين الخريطة")
+        elif cmd.startswith("Patch"):
+            patch_file = cmd.replace("Patch", "").strip()
+            Path(".patch_selected").write_text(patch_file)
+            if os.path.exists(patch_file):
+                print("✅ Patch:", patch_file)
+            else:
+                print("❌ Patch غير موجود")
+
+        elif cmd == "نفذ":
+            execute()
+
+        else:
+            print("❓ أمر غير معروف")

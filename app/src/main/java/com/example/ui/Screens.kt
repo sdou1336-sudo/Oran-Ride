@@ -55,6 +55,9 @@ fun OranRideAppContent(viewModel: OranRideViewModel) {
     ) {
         Crossfade(targetState = currentScreen, label = "screen_transition") { screen ->
             when (screen) {
+                "indrive_home" -> {
+                    InDriveMainScreen()
+                }
                 "mode_select" -> ModeSelectScreen(viewModel)
                 "register" -> RegisterScreen(viewModel)
                 "rider_home" -> RiderHomeScreen(viewModel)
@@ -1342,3 +1345,9 @@ fun Icon(imageName: Any, contentDescription: String, tint: Color, modifier: Modi
         }
     }
 }
+
+@Composable
+fun InDriveMainScreen() {
+    InDriveHome()
+}
+
