@@ -467,6 +467,9 @@ class OranRideViewModel(application: Application) : AndroidViewModel(application
         locationHelper?.start { lat, lon ->
             _riderLocation.value =
                 Pair(lat.toFloat(), lon.toFloat())
+
+            _driverLocation.value =
+                Pair(lat.toFloat(), lon.toFloat())
         }
     }
 }
