@@ -3,6 +3,9 @@ package com.example.ui
 import androidx.compose.animation.*
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.*
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -50,6 +53,7 @@ fun OranRideAppContent(viewModel: OranRideViewModel) {
     val currentUser by viewModel.currentUser.collectAsState()
 
     Surface(
+
         modifier = Modifier.fillMaxSize(),
         color = DarkBackground
     ) {
@@ -453,17 +457,19 @@ OutlinedTextField(
         searchText = it
         viewModel.searchPlaces(it)
     },
+            keyboardOptions = KeyboardOptions(
+                imeAction = ImeAction.Search
+            ),
+            keyboardActions = KeyboardActions(
+                onSearch = {
+                    viewModel.searchPlaces(searchText)
+                }
+            ),
     placeholder = { Text("إلى أين؟ ابحث عن مكان") },
     leadingIcon = {
         Icon(Icons.Filled.Search, "Search")
     },
-    trailingIcon = {
-        IconButton(onClick = {
-            viewModel.searchPlaces(searchText)
-        }) {
-            Icon(Icons.Filled.Search, "بحث")
-        }
-    },
+    
     modifier = Modifier
         .fillMaxWidth()
         .padding(12.dp)
@@ -1351,4 +1357,3 @@ fun Icon(imageName: Any, contentDescription: String, tint: Color, modifier: Modi
 fun InDriveMainScreen() {
     InDriveHome()
 }
-
