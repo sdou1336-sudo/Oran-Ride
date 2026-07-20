@@ -166,7 +166,7 @@ fun SearchPage(
             keyboardActions = KeyboardActions(
                 onSearch = {
                     results = places.filter {
-                        it.contains(query)
+                        it.name.contains(query)
                     }
                     keyboardController?.hide()
                 }
