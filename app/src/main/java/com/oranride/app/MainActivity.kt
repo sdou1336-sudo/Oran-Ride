@@ -7,6 +7,13 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.viewinterop.AndroidView
 import org.osmdroid.views.MapView
@@ -28,6 +35,8 @@ class MainActivity : ComponentActivity() {
 fun OranRideApp() {
 
     var currentPage by remember { mutableStateOf("الخريطة") }
+    var selectedLat by remember { mutableStateOf(35.6969) }
+    var selectedLon by remember { mutableStateOf(-0.6331) }
 
     Scaffold(
         bottomBar = {
@@ -67,11 +76,20 @@ fun OranRideApp() {
 
             when(currentPage) {
 
-                "الخريطة" -> MapPage()
+                "الخريطة" -> MapPage(
+                    selectedLat,
+                    selectedLon
+                )
 
                 "الرحلات" -> TripsPage()
 
-                "البحث" -> SearchPage()
+                "البحث" -> SearchPage(
+                    onPlaceSelected = { lat, lon ->
+                        selectedLat = lat
+                        selectedLon = lon
+                        currentPage = "الخريطة"
+                    }
+                )
 
                 "الرسائل" -> MessagesPage()
 
@@ -83,7 +101,10 @@ fun OranRideApp() {
 
 
 @Composable
-fun MapPage() {
+fun MapPage(
+    latitude: Double,
+    longitude: Double
+) {
 
     AndroidView(
         modifier = Modifier.fillMaxSize(),
@@ -113,8 +134,70 @@ fun TripsPage() {
 }
 
 @Composable
-fun SearchPage() {
-    Text("صفحة البحث عن الوجهة")
+fun SearchPage(
+    onPlaceSelected: (Double, Double) -> Unit
+) {
+
+    var query by remember { mutableStateOf("") }
+    var results by remember { mutableStateOf(listOf<String>()) }
+
+    val keyboardController = LocalSoftwareKeyboardController.current
+
+    val places = listOf(
+        "السينيا",
+        "جامعة وهران",
+        "مستشفى وهران",
+        "مطعم في وهران",
+        "وسط المدينة"
+    )
+
+    Column(
+        modifier = Modifier.fillMaxSize()
+    ) {
+
+        OutlinedTextField(
+            value = query,
+            onValueChange = {
+                query = it
+            },
+            label = { Text("أين تريد الذهاب؟") },
+            singleLine = true,
+
+            keyboardOptions = KeyboardOptions(
+                imeAction = ImeAction.Search
+            ),
+
+            keyboardActions = KeyboardActions(
+                onSearch = {
+                    results = places.filter {
+                        it.contains(query)
+                    }
+                    keyboardController?.hide()
+                }
+            )
+        )
+
+        LazyColumn {
+            items(results) { place ->
+                Text(
+                    text = place,
+                    modifier = Modifier.padding(16.dp),
+                    onClick = {
+                        when(place) {
+                            "السينيا" ->
+                                onPlaceSelected(35.6538, -0.6235)
+
+                            "جامعة وهران" ->
+                                onPlaceSelected(35.6971, -0.6308)
+
+                            "وسط المدينة" ->
+                                onPlaceSelected(35.6969, -0.6331)
+                        }
+                    }
+                )
+            }
+        }
+    }
 }
 
 @Composable
