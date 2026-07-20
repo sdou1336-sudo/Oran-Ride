@@ -28,6 +28,5 @@ interface NominatimApi {
         @Query("format") format: String = "jsonv2",
         @Query("limit") limit: Int = 10,
         @Query("addressdetails") addressDetails: Int = 1,
-        @Query("countrycodes") countryCodes: String = "dz"
     ): List<NominatimPlace>
 }
