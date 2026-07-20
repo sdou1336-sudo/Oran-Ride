@@ -2,15 +2,17 @@ package com.oranride.app
 
 object NominatimRepository {
 
-    suspend fun search(query: String): List<NominatimPlace> {
-        println("SEARCH QUERY: $query")
+    var lastError = ""
 
+    suspend fun search(query: String): List<NominatimPlace> {
         return try {
+            lastError = ""
             val result = NominatimClient.api.search(query)
-            println("RESULT COUNT: ${result.size}")
+            println("RESULT: ${result.size}")
             result
         } catch (e: Exception) {
-            println("ERROR: ${e.message}")
+            lastError = e.message ?: "Unknown error"
+            println("ERROR: $lastError")
             emptyList()
         }
     }
