@@ -82,6 +82,27 @@ fun RealMap(
                     )
                 }
             }
+
+        },
+        update = { map ->
+            if (targetLat != null && targetLon != null) {
+                val point = GeoPoint(targetLat, targetLon)
+                map.controller.animateTo(point)
+
+                val exists = map.overlays.any { overlay ->
+                    overlay is Marker && overlay.title == "Destination"
+                }
+
+                if (!exists) {
+                    val marker = Marker(map)
+                    marker.position = point
+                    marker.title = "Destination"
+                    map.overlays.add(marker)
+                }
+
+                map.invalidate()
+            }
+
         }
     )
 }

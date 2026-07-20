@@ -497,6 +497,7 @@ OutlinedTextField(
                             .fillMaxWidth()
                             .clickable {
                                 viewModel.selectSearchPlace(place)
+                                    showSearchResults = false
                                 searchText = place.display_name
                             }
                             .padding(12.dp),
