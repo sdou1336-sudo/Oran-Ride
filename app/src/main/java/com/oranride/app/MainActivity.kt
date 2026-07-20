@@ -146,12 +146,24 @@ fun SearchPage(
     val keyboardController = LocalSoftwareKeyboardController.current
 
     val places = listOf(
-        "السينيا",
-        "جامعة وهران",
-        "مستشفى وهران",
-        "مطعم في وهران",
-        "وسط المدينة"
-    )
+                                           "السينيا",
+                                           "جامعة وهران",
+                                           "مستشفى وهران",
+                                           "مطعم في وهران",
+                                           "وسط المدينة",
+                                           "بئر الجير",
+                                           "عين الترك",
+                                           "السانيا",
+                                           "مرسى الكبير",
+                                           "وهران الجديدة",
+                                           "أرزيو",
+                                           "بطيوة",
+                                           "مستغانم",
+                                           "مطار وهران أحمد بن بلة",
+                                           "محطة قطار وهران",
+                                           "ساحة أول نوفمبر",
+                                           "واجهة البحر وهران"
+)
 
     Column(
         modifier = Modifier.fillMaxSize()
@@ -185,15 +197,51 @@ fun SearchPage(
                     text = place,
                     modifier = Modifier.padding(16.dp).clickable {
                         when(place) {
-                            "السينيا" ->
-                                onPlaceSelected(35.6538, -0.6235)
+    "السينيا" ->
+        onPlaceSelected(35.6538, -0.6235)
 
-                            "جامعة وهران" ->
-                                onPlaceSelected(35.6971, -0.6308)
+    "جامعة وهران" ->
+        onPlaceSelected(35.6971, -0.6308)
 
-                            "وسط المدينة" ->
-                                onPlaceSelected(35.6969, -0.6331)
-                        }
+    "وسط المدينة" ->
+        onPlaceSelected(35.6969, -0.6331)
+
+    "بئر الجير" ->
+        onPlaceSelected(35.7200, -0.5450)
+
+    "عين الترك" ->
+        onPlaceSelected(35.7430, -0.7690)
+
+    "السانيا" ->
+        onPlaceSelected(35.6500, -0.6250)
+
+    "مرسى الكبير" ->
+        onPlaceSelected(35.8270, -0.9130)
+
+    "وهران الجديدة" ->
+        onPlaceSelected(35.6800, -0.6200)
+
+    "أرزيو" ->
+        onPlaceSelected(35.8500, -0.3160)
+
+    "بطيوة" ->
+        onPlaceSelected(35.8030, -0.2660)
+
+    "مستغانم" ->
+        onPlaceSelected(35.9310, 0.0890)
+
+    "مطار وهران أحمد بن بلة" ->
+        onPlaceSelected(35.6239, -0.6212)
+
+    "محطة قطار وهران" ->
+        onPlaceSelected(35.7030, -0.6490)
+
+    "ساحة أول نوفمبر" ->
+        onPlaceSelected(35.6970, -0.6350)
+
+    "واجهة البحر وهران" ->
+        onPlaceSelected(35.7100, -0.6500)
+}
                     }
                 )
             }
