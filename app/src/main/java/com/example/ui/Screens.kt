@@ -495,21 +495,65 @@ OutlinedTextField(
                 ,
             colors = CardDefaults.cardColors(containerColor = Color.White)
         ) {
-            LazyColumn {
-                items(searchResults.take(5)) { place ->
-                    Text(
-                        text = place.display_name,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .clickable {
-                                viewModel.selectSearchPlace(place)
-                                    showSearchResults = false
-                                searchText = place.display_name
-                            }
-                            .padding(12.dp),
-                        color = Slate900
-                    )
-                }
+              LazyColumn(
+                  verticalArrangement = Arrangement.spacedBy(8.dp),
+                  modifier = Modifier.padding(8.dp)
+              ) {
+                  items(searchResults.take(5)) { place ->
+                      Card(
+                          modifier = Modifier
+                              .fillMaxWidth()
+                              .clickable {
+                                  viewModel.selectSearchPlace(place)
+                                  showSearchResults = false
+                                  searchText = place.display_name
+                              },
+                          shape = RoundedCornerShape(16.dp),
+                          colors = CardDefaults.cardColors(
+                              containerColor = Color.White
+                          ),
+                          elevation = CardDefaults.cardElevation(
+                              defaultElevation = 3.dp
+                          )
+                      ) {
+                          Row(
+                              modifier = Modifier.padding(12.dp),
+                              verticalAlignment = Alignment.CenterVertically
+                          ) {
+                              Icon(
+                                  Icons.Filled.LocationOn,
+                                  contentDescription = "Location",
+                                  tint = AlgerianGreen,
+                                  modifier = Modifier.size(28.dp)
+                              )
+
+                              Spacer(modifier = Modifier.width(12.dp))
+
+                              Column {
+                                  Text(
+                                      text = place.display_name.split(",").first(),
+                                      color = Slate900,
+                                      fontSize = 16.sp,
+                                      fontWeight = FontWeight.Bold
+                                  )
+
+                                  Text(
+                                      text = place.display_name,
+                                      color = Slate500,
+                                      fontSize = 12.sp,
+                                      maxLines = 2
+                                  )
+
+                                  Text(
+                                      text = "اضغط لاختيار المكان",
+                                      color = AlgerianGreen,
+                                      fontSize = 11.sp
+                                  )
+                              }
+                          }
+                      }
+                  }
+              }
             }
         }
     }
