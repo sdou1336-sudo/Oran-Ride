@@ -15,6 +15,8 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -386,6 +388,8 @@ fun RiderHomeScreen(viewModel: OranRideViewModel) {
     var showDestDialog by remember { mutableStateOf(false) }
 
     var searchText by remember { mutableStateOf("") }
+    val keyboardController = LocalSoftwareKeyboardController.current
+    val focusManager = LocalFocusManager.current
     var showSearchResults by remember { mutableStateOf(true) }
     val searchResults by viewModel.searchResults.collectAsState()
 
