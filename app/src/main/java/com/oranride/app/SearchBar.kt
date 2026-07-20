@@ -24,8 +24,11 @@ fun SearchBar(
 
     LaunchedEffect(query) {
     if (query.length >= 3) {
+        println("START SEARCH: $query")
         results = withContext(Dispatchers.IO) {
-            NominatimRepository.search(query)
+            val data = NominatimRepository.search(query)
+            println("GOT RESULTS: ${data.size}")
+            data
         }
     } else {
         results = emptyList()
