@@ -14,10 +14,6 @@ fun OranRideNewUI(viewModel: OranRideViewModel) {
 
     val currentScreen by viewModel.currentScreen.collectAsState()
 
-    GpsPermissionManager { lat, lon ->
-        // GPS location ready
-    }
-
     Surface(
         modifier = Modifier.fillMaxSize(),
         color = Color(0xFFFEF7FF)
