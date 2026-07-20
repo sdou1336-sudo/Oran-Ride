@@ -106,7 +106,7 @@ keyboardController?.hide()
                         ) {
 
                             Text(
-                                text = place.display_name,
+                                text = place.displayName,
                                 modifier = Modifier.padding(16.dp)
                             )
                         }
