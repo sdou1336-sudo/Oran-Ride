@@ -183,8 +183,7 @@ fun SearchPage(
             items(results) { place ->
                 Text(
                     text = place,
-                    modifier = Modifier.padding(16.dp),
-                    onClick = {
+                    modifier = Modifier.padding(16.dp).clickable {
                         when(place) {
                             "السينيا" ->
                                 onPlaceSelected(35.6538, -0.6235)
