@@ -155,6 +155,7 @@ fun MapPage(
 
                     map.overlays.add(selectedMarker)
 
+                    map.controller.setZoom(17.0)
                     map.controller.animateTo(point)
                     map.invalidate()
                 }

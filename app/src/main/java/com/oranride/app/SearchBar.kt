@@ -41,6 +41,15 @@ fun SearchBar(
                 value = query,
                 onValueChange = {
                     query = it
+
+                    results =
+                        if (query.isBlank()) {
+                            emptyList()
+                        } else {
+                            PlacesDatabase.places.filter {
+                                it.name.contains(query, ignoreCase = true)
+                            }
+                        }
                 },
                 modifier = Modifier.fillMaxWidth(),
 
@@ -56,10 +65,6 @@ fun SearchBar(
 
                 keyboardActions = KeyboardActions(
                     onSearch = {
-
-                        results = PlacesDatabase.places.filter {
-                            it.name.contains(query)
-                        }
 
                         keyboardController?.hide()
                     }
