@@ -6,7 +6,7 @@ object NominatimRepository {
 
     suspend fun search(query: String): List<NominatimPlace> {
         return try {
-            val result = NominatimClient.api.search(query)
+            val result = NominatimClient.api.search("$query, Oran, Algeria")
             lastError = "SUCCESS: ${result.size}"
             result
         } catch (e: Exception) {
