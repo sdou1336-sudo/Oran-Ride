@@ -2,6 +2,7 @@ package com.oranride.app
 
 import com.squareup.moshi.Json
 import retrofit2.http.GET
+import retrofit2.http.Headers
 import retrofit2.http.Query
 
 data class NominatimPlace(
@@ -17,6 +18,10 @@ data class NominatimPlace(
 
 interface NominatimApi {
 
+    @Headers(
+    "User-Agent: OranRide/1.0",
+    "Accept: application/json"
+)
     @GET("search")
     suspend fun search(
         @Query("q") query: String,
