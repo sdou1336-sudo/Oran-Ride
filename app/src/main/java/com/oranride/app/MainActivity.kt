@@ -13,7 +13,6 @@ import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.ui.Modifier
@@ -177,46 +176,7 @@ fun SearchPage(
     var query by remember { mutableStateOf("") }
     var results by remember { mutableStateOf(listOf<Place>()) }
 
-    val keyboardController = LocalSoftwareKeyboardController.current
-
-    val places = PlacesDatabase.places
-
-    Column(
-        modifier = Modifier.fillMaxSize()
-    ) {
-
-        OutlinedTextField(
-            value = query,
-            onValueChange = {
-                query = it
-            },
-            label = { Text("أين تريد الذهاب؟") },
-            singleLine = true,
-
-            keyboardOptions = KeyboardOptions(
-                imeAction = ImeAction.Search
-            ),
-
-            keyboardActions = KeyboardActions(
-                onSearch = {
-                    results = places.filter {
-                        it.name.contains(query)
-                    }
-                    keyboardController?.hide()
-                }
-            )
-        )
-
-        LazyColumn {
-            items(results) { place ->
-                Text(
-                    text = place.name,
-                    modifier = Modifier.padding(16.dp).clickable {
-                        onPlaceSelected(
-                                                        place.latitude,
-                                                        place.longitude
-                                                    )
-                    }
+    
                 )
             }
         }
