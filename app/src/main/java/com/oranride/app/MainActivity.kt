@@ -108,26 +108,31 @@ fun MapPage(
     longitude: Double
 ) {
 
-    AndroidView(
-        modifier = Modifier.fillMaxSize(),
-        factory = { context ->
+    Box(
+        modifier = Modifier.fillMaxSize()
+    ) {
 
-            Configuration.getInstance().userAgentValue =
-                context.packageName
+        AndroidView(
+            modifier = Modifier.fillMaxSize(),
+            factory = { context ->
 
-            val map = MapView(context)
+                Configuration.getInstance().userAgentValue =
+                    context.packageName
 
-            map.setMultiTouchControls(true)
+                val map = MapView(context)
 
-            map.controller.setZoom(14.0)
+                map.setMultiTouchControls(true)
 
-            map.controller.setCenter(
-                GeoPoint(35.6969, -0.6331)
-            )
+                map.controller.setZoom(14.0)
 
-            map
-        }
-    )
+                map.controller.setCenter(
+                    GeoPoint(latitude, longitude)
+                )
+
+                map
+            }
+        )
+    }
 }
 
 @Composable
