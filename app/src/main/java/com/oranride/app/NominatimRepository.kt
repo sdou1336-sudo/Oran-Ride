@@ -6,12 +6,11 @@ object NominatimRepository {
 
     suspend fun search(query: String): List<NominatimPlace> {
         return try {
-            
             val result = NominatimClient.api.search(query)
-            lastError = "OK ${result.size}"
+            lastError = "SUCCESS: ${result.size}"
             result
         } catch (e: Exception) {
-            lastError = e.toString()
+            lastError = "ERROR: ${e::class.simpleName} ${e.message}"
             emptyList()
         }
     }

@@ -78,6 +78,7 @@ val keyboardController = LocalSoftwareKeyboardController.current
 
 
             Text("عدد النتائج: ${results.size}")
+Text(NominatimRepository.lastError)
 
 if (results.isNotEmpty()) {
 
