@@ -680,19 +680,6 @@ OutlinedTextField(
     }
 
     // Landmark Choice Dialogs
-    if (showPickupDialog) {
-        LandmarkSelectorDialog(onDismiss = { showPickupDialog = false }) { selected ->
-            viewModel.pickupLandmark.value = selected
-            showPickupDialog = false
-        }
-    }
-    if (showDestDialog) {
-        LandmarkSelectorDialog(onDismiss = { showDestDialog = false }) { selected ->
-            viewModel.destinationLandmark.value = selected
-            showDestDialog = false
-        }
-    }
-}
 
 // Dialog picker for Landmarks
 @Composable
