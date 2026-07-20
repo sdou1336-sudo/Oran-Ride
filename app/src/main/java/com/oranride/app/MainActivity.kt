@@ -19,6 +19,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.viewinterop.AndroidView
 import org.osmdroid.views.MapView
+import org.osmdroid.views.overlay.Marker
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.config.Configuration
 
@@ -108,6 +109,9 @@ fun MapPage(
     longitude: Double
 ) {
 
+    var mapView: MapView? = null
+    var selectedMarker: Marker? = null
+
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -120,6 +124,7 @@ fun MapPage(
                     context.packageName
 
                 val map = MapView(context)
+                mapView = map
 
                 map.setMultiTouchControls(true)
 
@@ -130,6 +135,29 @@ fun MapPage(
                 )
 
                 map
+            }
+        )
+
+        SearchBar(
+            onPlaceSelected = { lat, lon ->
+                mapView?.let { map ->
+
+                    val point = GeoPoint(lat, lon)
+
+                    selectedMarker?.let {
+                        map.overlays.remove(it)
+                    }
+
+                    selectedMarker = Marker(map).apply {
+                        position = point
+                        title = "الوجهة"
+                    }
+
+                    map.overlays.add(selectedMarker)
+
+                    map.controller.animateTo(point)
+                    map.invalidate()
+                }
             }
         )
     }
