@@ -172,15 +172,7 @@ fun TripsPage() {
 fun SearchPage(
     onPlaceSelected: (Double, Double) -> Unit
 ) {
-
-    var query by remember { mutableStateOf("") }
-    var results by remember { mutableStateOf(listOf<Place>()) }
-
-    
-                )
-            }
-        }
-    }
+    Text("البحث عبر الخريطة")
 }
 
 @Composable
