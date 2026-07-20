@@ -12,14 +12,25 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
-
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 @Composable
 fun SearchBar(
     onPlaceSelected: (Double, Double) -> Unit
 ) {
 
     var query by remember { mutableStateOf("") }
-    var results by remember { mutableStateOf(listOf<Place>()) }
+    var results by remember { mutableStateOf(listOf<NominatimPlace>()) }
+
+    LaunchedEffect(query) {
+    if (query.length >= 3) {
+        results = withContext(Dispatchers.IO) {
+            NominatimRepository.search(query)
+        }
+    } else {
+        results = emptyList()
+    }
+}
 
     val keyboardController = LocalSoftwareKeyboardController.current
 
@@ -40,17 +51,8 @@ fun SearchBar(
             OutlinedTextField(
                 value = query,
                 onValueChange = {
-                    query = it
-
-                    results =
-                        if (query.isBlank()) {
-                            emptyList()
-                        } else {
-                            PlacesDatabase.places.filter {
-                                it.name.contains(query, ignoreCase = true)
-                            }
-                        }
-                },
+    query = it
+},
                 modifier = Modifier.fillMaxWidth(),
 
                 label = {
@@ -93,16 +95,18 @@ fun SearchBar(
                                 .clickable {
 
                                     onPlaceSelected(
-                                        place.latitude,
-                                        place.longitude
-                                    )
+    place.lat.toDouble(),
+    place.lon.toDouble()
+)
 
-                                    results = emptyList()
+results = emptyList()
+query = ""
+keyboardController?.hide()
                                 }
                         ) {
 
                             Text(
-                                text = place.name,
+                                text = place.display_name,
                                 modifier = Modifier.padding(16.dp)
                             )
                         }
