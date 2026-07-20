@@ -74,7 +74,9 @@ val keyboardController = LocalSoftwareKeyboardController.current
             )
 
 
-            if (results.isNotEmpty()) {
+            Text("عدد النتائج: ${results.size}")
+
+if (results.isNotEmpty()) {
 
                 Spacer(
                     modifier = Modifier.height(8.dp)
