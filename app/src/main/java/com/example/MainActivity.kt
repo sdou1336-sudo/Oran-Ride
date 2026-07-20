@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
           modifier = Modifier.fillMaxSize(),
           contentWindowInsets = androidx.compose.foundation.layout.WindowInsets(0, 0, 0, 0)
         ) { innerPadding ->
-          OranRideNewUI(viewModel = viewModel)
+          OranRideAppContent(viewModel = viewModel)
         }
       }
     }
