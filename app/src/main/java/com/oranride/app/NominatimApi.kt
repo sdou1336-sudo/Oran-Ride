@@ -26,7 +26,9 @@ interface NominatimApi {
     suspend fun search(
         @Query("q") query: String,
         @Query("format") format: String = "jsonv2",
-        @Query("limit") limit: Int = 10,
+        @Query("limit") limit: Int = 20,
+        @Query("extratags") extraTags: Int = 1,
+        @Query("namedetails") nameDetails: Int = 1,
         @Query("addressdetails") addressDetails: Int = 1,
     ): List<NominatimPlace>
 }
