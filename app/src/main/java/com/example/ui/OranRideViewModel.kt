@@ -28,7 +28,7 @@ class OranRideViewModel(application: Application) : AndroidViewModel(application
     private val TAG = "OranRideViewModel"
 
     // Current screen navigation: "mode_select", "register", "rider_home", "rider_tracking", "driver_home", "driver_nav", "history"
-    private val _currentScreen = MutableStateFlow("indrive_home")
+    private val _currentScreen = MutableStateFlow("rider_home")
     val currentScreen: StateFlow<String> = _currentScreen.asStateFlow()
 
     // Active User profiles
