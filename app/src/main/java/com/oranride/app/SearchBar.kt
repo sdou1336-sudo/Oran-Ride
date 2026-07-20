@@ -32,7 +32,7 @@ fun SearchBar(
     }
 }
 
-    val keyboardController = LocalSoftwareKeyboardController.current
+val keyboardController = LocalSoftwareKeyboardController.current
 
     Surface(
         modifier = Modifier
