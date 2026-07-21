@@ -36,7 +36,10 @@ req = urllib.request.Request(
     headers={"Content-Type": "application/json"}
 )
 
-with urllib.request.urlopen(req) as r:
-    result = json.loads(r.read())
-
-print(json.dumps(result, indent=2))
+try:
+    with urllib.request.urlopen(req) as r:
+        result = json.loads(r.read())
+    print(json.dumps(result, indent=2))
+except Exception as e:
+    print("Gemini analysis unavailable:")
+    print(e)
