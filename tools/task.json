@@ -1,5 +1,5 @@
 {
-  "task": "Connect SearchBar UI with NominatimRepository: load results, display places, and move OSMDroid map to selected result",
+  "task": "Display multiple Nominatim places in SearchBar dropdown list instead of only Oran",
   "file": "MainActivity.kt",
   "status": "waiting"
 }
