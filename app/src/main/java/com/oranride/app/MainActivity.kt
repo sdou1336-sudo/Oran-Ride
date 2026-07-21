@@ -1,3 +1,4 @@
+import com.oranride.app.NominatimRepository
 package com.oranride.app
 
 import android.os.Bundle

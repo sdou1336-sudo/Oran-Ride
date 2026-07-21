@@ -19,7 +19,7 @@ object NominatimRepository {
             val result = NominatimClient.api.search(
                 "$improvedQuery, Oran, Algeria",
                 limit = 20,
-                addressdetails = 1
+                addressDetails = 1
             )
             lastError = "SUCCESS: ${result.size}"
             result
