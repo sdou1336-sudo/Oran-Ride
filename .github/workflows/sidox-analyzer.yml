@@ -6,6 +6,9 @@ on:
     branches:
       - main
 
+env:
+  GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
 jobs:
   analyze:
     runs-on: ubuntu-latest
