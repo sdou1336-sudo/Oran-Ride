@@ -200,9 +200,19 @@ fun SearchPage(
     
     
     fun searchPlaces(query: String) {
-        // جلب نتائج Nominatim وعرضها
         searchResults.clear()
+
         println("Searching: $query")
+
+        kotlinx.coroutines.CoroutineScope(kotlinx.coroutines.Dispatchers.Main).launch {
+            val results = NominatimRepository.search(query)
+
+            results.forEach {
+                searchResults.add(
+                    it.displayName ?: "${it.lat}, ${it.lon}"
+                )
+            }
+        }
     }
     
     

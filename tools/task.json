@@ -1,5 +1,5 @@
 {
-  "task": "Connect Nominatim search results to OSMDroid map: move camera to selected place and add marker",
+  "task": "Connect SearchBar UI with NominatimRepository: load results, display places, and move OSMDroid map to selected result",
   "file": "MainActivity.kt",
   "status": "waiting"
 }
