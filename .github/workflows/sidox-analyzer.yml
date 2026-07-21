@@ -24,3 +24,10 @@ jobs:
       - name: Save sidox report history
         run: |
           python3 sidox/save_report.py
+
+
+      - name: Analyze with Gemini
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python3 sidox/gemini/analyze.py
