@@ -5,6 +5,9 @@ from datetime import datetime
 report = "sidox/reports/latest_report.json"
 out = "sidox/patches/latest_patch.json"
 
+import os
+os.makedirs("sidox/patches", exist_ok=True)
+
 if not os.path.exists(report):
     print("No report found")
     exit(1)
