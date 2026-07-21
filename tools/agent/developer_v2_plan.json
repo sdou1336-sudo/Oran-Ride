@@ -1,0 +1,15 @@
+{
+  "component": "AI Developer Agent v2",
+  "goal": "Execute tasks automatically instead of only analyzing them",
+  "features": [
+    "Read tools/task.json",
+    "Open target files automatically",
+    "Create backup before editing",
+    "Apply code modifications",
+    "Save modified files",
+    "Set task status to done",
+    "Write execution log",
+    "Trigger Build Tester after changes"
+  ],
+  "status": "planned"
+}
