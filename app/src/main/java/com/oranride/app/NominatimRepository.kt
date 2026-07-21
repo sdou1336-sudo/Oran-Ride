@@ -33,4 +33,22 @@ object NominatimRepository {
             emptyList()
         }
     }
+
+    private fun formatAddress(place: NominatimPlace): String {
+        val address = place.address ?: emptyMap()
+
+        val parts = listOfNotNull(
+            address["road"],
+            address["suburb"] ?: address["neighbourhood"],
+            address["city"] ?: address["town"],
+            "Oran"
+        )
+
+        return if (parts.isNotEmpty()) {
+            parts.joinToString(", ")
+        } else {
+            place.displayName
+        }
+    }
+
 }
