@@ -184,6 +184,28 @@ fun SearchPage(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text("البحث عن الأماكن")
+        Text("نتائج البحث")
+    
+    var searchResults = remember { mutableStateListOf<String>() }
+    
+    // ربط نتائج Nominatim
+    // سيتم تحديث القائمة عند تنفيذ البحث
+    val nominatimRepository = NominatimRepository()
+
+    fun moveMapToLocation(latitude: Double, longitude: Double) {
+        // تحريك الخريطة إلى نتيجة البحث
+        println("Move map: $latitude,$longitude")
+    }
+    
+    
+    fun searchPlaces(query: String) {
+        // جلب نتائج Nominatim وعرضها
+        searchResults.clear()
+        println("Searching: $query")
+    }
+    
+    
+    
         Spacer(modifier = Modifier.height(16.dp))
         Text("جاهز لعرض نتائج الأماكن من Nominatim")
     }

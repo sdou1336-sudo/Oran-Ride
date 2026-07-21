@@ -1,0 +1,10 @@
+{
+  "MainActivity": "app/src/main/java/com/oranride/app/MainActivity.kt",
+  "PlacesDatabase": "app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+  "SearchBar": "app/src/main/java/com/oranride/app/SearchBar.kt",
+  "NominatimApi": "app/src/main/java/com/oranride/app/NominatimApi.kt",
+  "NominatimClient": "app/src/main/java/com/oranride/app/NominatimClient.kt",
+  "NominatimRepository": "app/src/main/java/com/oranride/app/NominatimRepository.kt",
+  "LocationState": "app/src/main/java/com/oranride/app/LocationState.kt",
+  "LocationManager": "app/src/main/java/com/oranride/app/LocationManager.kt"
+}

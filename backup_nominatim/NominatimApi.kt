@@ -13,16 +13,7 @@ data class NominatimPlace(
     val lat: String,
 
     @Json(name = "lon")
-    val lon: String,
-
-    @Json(name = "type")
-    val type: String? = null,
-
-    @Json(name = "importance")
-    val importance: Double? = null,
-
-    @Json(name = "address")
-    val address: Map<String, String>? = null
+    val lon: String
 )
 
 interface NominatimApi {
