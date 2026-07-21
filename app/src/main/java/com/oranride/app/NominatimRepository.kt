@@ -6,7 +6,17 @@ object NominatimRepository {
 
     suspend fun search(query: String): List<NominatimPlace> {
         return try {
-            val result = NominatimClient.api.search("$query, Oran, Algeria")
+            val searchQuery = if (query.contains("oran", ignoreCase = true) || query.contains("وهران")) {
+            query
+        } else {
+            "$query, Oran, Algeria"
+        }
+
+        val improvedQuery = searchQuery
+                .trim()
+                .replace("  ", " ")
+
+            val result = NominatimClient.api.search("$improvedQuery, Oran, Algeria", limit = 10)
             lastError = "SUCCESS: ${result.size}"
             result
         } catch (e: Exception) {

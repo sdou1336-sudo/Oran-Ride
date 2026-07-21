@@ -1,6 +1,8 @@
 package com.oranride.app
 
 import android.os.Bundle
+import androidx.activity.result.contract.ActivityResultContracts
+import android.Manifest
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.clickable
@@ -24,8 +26,13 @@ import org.osmdroid.config.Configuration
 
 class MainActivity : ComponentActivity() {
 
+    private val requestLocationPermission =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        requestLocationPermission.launch(Manifest.permission.ACCESS_FINE_LOCATION)
 
         setContent {
             OranRideApp()
@@ -172,7 +179,14 @@ fun TripsPage() {
 fun SearchPage(
     onPlaceSelected: (Double, Double) -> Unit
 ) {
-    Text("البحث عبر الخريطة")
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text("البحث عن الأماكن")
+        Spacer(modifier = Modifier.height(16.dp))
+        Text("جاهز لعرض نتائج الأماكن من Nominatim")
+    }
 }
 
 @Composable
