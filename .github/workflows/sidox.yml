@@ -1,0 +1,29 @@
+name: Sidox AI Analyzer
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  sidox:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+
+      - name: Run sidox analyzer
+        run: python3 sidox/analyzer.py
+
+      - name: Save report
+        run: python3 sidox/save_report.py
+
+      - name: Create patch proposal
+        run: python3 sidox/patch_planner.py
+
+      - name: Create backup
+        run: python3 sidox/backup.py
+
+      - name: Check project structure
+        run: python3 sidox/project_analyzer.py
