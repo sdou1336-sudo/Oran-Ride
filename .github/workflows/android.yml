@@ -24,10 +24,17 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: Build APK
-        run: ./gradlew assembleDebug
+        run: ./gradlew assembleDebug --stacktrace --info 2>&1 | tee build_error.log
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: Oran-Ride-debug
           path: app/build/outputs/apk/debug/app-debug.apk
+
+
+      - name: Upload Build Log
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-error-log
+          path: build_error.log
