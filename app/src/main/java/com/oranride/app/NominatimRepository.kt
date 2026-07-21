@@ -22,9 +22,12 @@ object NominatimRepository {
                 limit = 20,
                 addressDetails = 1
             )
-            lastError = "SUCCESS: ${result.size}"
-            result
-        } catch (e: Exception) {
+            val ranked = result
+                            .sortedByDescending { it.importance ?: 0.0 }
+
+                      lastError = "SUCCESS: ${ranked.size}"
+                      ranked
+        catch (e: Exception) {
             lastError = "ERROR: ${e::class.simpleName} ${e.message}"
             emptyList()
         }

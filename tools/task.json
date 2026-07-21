@@ -1,5 +1,5 @@
 {
-  "task": "تحسين محرك البحث",
-  "file": "NominatimRepository.kt",
-  "status": "waiting"
+    "task": "Improve Nominatim ranking: sort by importance, format full address, and filter Oran nearby places",
+    "file": "NominatimRepository.kt",
+    "status": "waiting"
 }
