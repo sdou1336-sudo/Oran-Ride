@@ -27,7 +27,8 @@ object NominatimRepository {
 
                       lastError = "SUCCESS: ${ranked.size}"
                       ranked
-        catch (e: Exception) {
+                 }
+                 catch (e: Exception) {
             lastError = "ERROR: ${e::class.simpleName} ${e.message}"
             emptyList()
         }
