@@ -1,16 +1,20 @@
-import json
 import os
+import json
 
 report = "sidox/reports/latest_report.json"
 
-if not os.path.exists(report):
-    print("No sidox report found")
-    exit(1)
+api_key = os.getenv("GEMINI_API_KEY")
 
-with open(report) as f:
-    data = json.load(f)
+if not api_key:
+    print("GEMINI_API_KEY not configured")
+else:
+    print("Gemini API key detected")
 
-print("SIDOX REPORT FOR AI ANALYSIS")
-print(json.dumps(data, indent=2))
+if os.path.exists(report):
+    with open(report) as f:
+        data = json.load(f)
 
-print("Gemini connector ready")
+    print("SIDOX REPORT")
+    print(json.dumps(data, indent=2))
+else:
+    print("No report found")
