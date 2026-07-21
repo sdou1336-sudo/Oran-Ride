@@ -16,7 +16,7 @@ if not os.path.exists(report):
 with open(report) as f:
     data = json.load(f)
 
-prompt = "Analyze this Android project build report and explain the problem:\n" + json.dumps(data)
+prompt = "Analyze this Android project build report and explain the problem:\n" + json.dumps(data, ensure_ascii=False)
 
 url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" + key
 
@@ -33,7 +33,7 @@ body = json.dumps({
 req = urllib.request.Request(
     url,
     data=body,
-    headers={"Content-Type": "application/json"}
+    headers={"Content-Type": "application/json; charset=utf-8"}
 )
 
 try:
