@@ -117,7 +117,10 @@ fun OranRideApp() {
                 "الرسائل" -> MessagesPage()
 
                 "الحساب",
-                                            "السائق" -> DriverPage()
+                                            "السائق" -> DriverPage { lat, lon ->
+                            activeRideLat = lat
+                            activeRideLon = lon
+                        }
             }
         }
     }
@@ -263,7 +266,7 @@ fun ProfilePage() {
 
 
 @Composable
-fun DriverPage() {
+fun DriverPage(onRideAccepted: (Double, Double) -> Unit = { _, _ -> }) {
 
     val driverViewModel: DriverViewModel = viewModel()
     val rideViewModel: RideViewModel = viewModel()
@@ -290,8 +293,7 @@ fun DriverPage() {
             Button(
                 onClick = {
                     rideViewModel.acceptRide(ride.id)
-                    activeRideLat = ride.pickupLat
-                    activeRideLon = ride.pickupLon
+                    onRideAccepted(ride.pickupLat, ride.pickupLon)
                 }
             ) {
                 Text(
