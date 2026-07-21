@@ -219,6 +219,19 @@ fun SearchPage(
     
     
         Spacer(modifier = Modifier.height(16.dp))
+
+        searchResults.forEach { place ->
+            Text(
+                text = place,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp)
+                    .clickable {
+                        println("Selected place: $place")
+                    }
+            )
+        }
+
         Text("جاهز لعرض نتائج الأماكن من Nominatim")
     }
 }
