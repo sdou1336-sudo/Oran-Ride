@@ -1,6 +1,7 @@
 package com.oranride.app
 
 object NominatimRepository {
+    const val REPOSITORY_VERSION = 1
 
     var lastError = ""
 
