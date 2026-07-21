@@ -1,0 +1,137 @@
+[
+  {
+    "file": "app/src/main/java/com/oranride/app/MainActivity.kt",
+    "functions": [
+      "onCreate",
+      "OranRideApp",
+      "MapPage",
+      "TripsPage",
+      "SearchPage",
+      "moveMapToLocation",
+      "searchPlaces",
+      "MessagesPage",
+      "ProfilePage",
+      "DriverPage"
+    ],
+    "classes": [
+      "MainActivity"
+    ]
+  },
+  {
+    "file": "app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+    "functions": [],
+    "classes": [
+      "Place("
+    ]
+  },
+  {
+    "file": "app/src/main/java/com/oranride/app/SearchBar.kt",
+    "functions": [
+      "SearchBar"
+    ],
+    "classes": []
+  },
+  {
+    "file": "app/src/main/java/com/oranride/app/NominatimApi.kt",
+    "functions": [
+      "search"
+    ],
+    "classes": [
+      "NominatimPlace("
+    ]
+  },
+  {
+    "file": "app/src/main/java/com/oranride/app/NominatimClient.kt",
+    "functions": [],
+    "classes": []
+  },
+  {
+    "file": "app/src/main/java/com/oranride/app/NominatimRepository.kt",
+    "functions": [
+      "search",
+      "formatAddress"
+    ],
+    "classes": []
+  },
+  {
+    "file": "app/src/main/java/com/oranride/app/LocationState.kt",
+    "functions": [],
+    "classes": [
+      "LocationState("
+    ]
+  },
+  {
+    "file": "app/src/main/java/com/oranride/app/LocationManager.kt",
+    "functions": [
+      "getLastLocation"
+    ],
+    "classes": [
+      "LocationManager(context:"
+    ]
+  },
+  {
+    "file": "app/src/main/java/com/oranride/app/Driver.kt",
+    "functions": [],
+    "classes": [
+      "Driver("
+    ]
+  },
+  {
+    "file": "app/src/main/java/com/oranride/app/DriverRepository.kt",
+    "functions": [
+      "getDrivers",
+      "addDriver",
+      "updateDriverAvailability"
+    ],
+    "classes": [
+      "DriverRepository"
+    ]
+  },
+  {
+    "file": "app/src/main/java/com/oranride/app/DriverViewModel.kt",
+    "functions": [
+      "loadDrivers",
+      "addDriver",
+      "setDriverAvailability"
+    ],
+    "classes": [
+      "DriverViewModel("
+    ]
+  },
+  {
+    "file": "app/src/main/java/com/oranride/app/RideRequest.kt",
+    "functions": [],
+    "classes": [
+      "RideRequest("
+    ]
+  },
+  {
+    "file": "app/src/main/java/com/oranride/app/RideRepository.kt",
+    "functions": [
+      "getRides",
+      "addRide",
+      "acceptRide"
+    ],
+    "classes": [
+      "RideRepository"
+    ]
+  },
+  {
+    "file": "app/src/main/java/com/oranride/app/RideViewModel.kt",
+    "functions": [
+      "loadRides",
+      "addRide",
+      "acceptRide"
+    ],
+    "classes": [
+      "RideViewModel("
+    ]
+  },
+  {
+    "file": "app/src/main/java/com/oranride/app/debug/UIState.kt",
+    "functions": [],
+    "classes": [
+      "UIState("
+    ]
+  }
+]

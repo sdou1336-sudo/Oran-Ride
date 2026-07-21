@@ -1,4 +1,3 @@
-// SIDOX_PATCH
 package com.oranride.app
 
 import androidx.lifecycle.ViewModel

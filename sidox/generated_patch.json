@@ -1,0 +1,13 @@
+{
+  "task": "use_github_actions",
+  "reason": "AAPT2 environment error",
+  "status": "executed",
+  "changes": [
+    {
+      "type": "workflow",
+      "file": ".github/workflows/android.yml",
+      "action": "verify_build_pipeline"
+    }
+  ],
+  "validation": "passed"
+}

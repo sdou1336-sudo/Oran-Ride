@@ -1,4 +1,3 @@
-// SIDOX_PATCH
 package com.oranride.app
 
 data class Driver(
