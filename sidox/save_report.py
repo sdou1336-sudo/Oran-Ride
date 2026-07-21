@@ -1,6 +1,7 @@
 import os, json, datetime, shutil
 
 src = "sidox/reports/latest_report.json"
+os.makedirs("sidox/history", exist_ok=True)
 dst_dir = "sidox/history"
 
 if os.path.exists(src):
