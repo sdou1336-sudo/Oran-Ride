@@ -1,0 +1,5 @@
+
+
+      - name: Save sidox report history
+        run: |
+          python3 sidox/save_report.py
