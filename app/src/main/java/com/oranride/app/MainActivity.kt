@@ -191,7 +191,7 @@ fun SearchPage(
     
     // ربط نتائج Nominatim
     // سيتم تحديث القائمة عند تنفيذ البحث
-    val nominatimRepository = NominatimRepository()
+    val nominatimRepository = NominatimRepository
 
     fun moveMapToLocation(latitude: Double, longitude: Double) {
         // تحريك الخريطة إلى نتيجة البحث
