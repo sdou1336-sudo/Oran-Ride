@@ -1,4 +1,22 @@
+name: Sidox Analyzer
 
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run sidox analyzer
+        run: |
+          python3 sidox/analyzer.py
 
       - name: Save sidox report history
         run: |
