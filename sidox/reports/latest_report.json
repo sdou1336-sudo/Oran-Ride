@@ -1,0 +1,6 @@
+{
+  "time": "2026-07-21T18:36:33.323874",
+  "status": "FAILED",
+  "problem": "Java heap space",
+  "category": "memory"
+}

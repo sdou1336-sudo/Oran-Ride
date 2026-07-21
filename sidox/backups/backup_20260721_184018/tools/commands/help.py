@@ -1,0 +1,10 @@
+def run():
+    print("=== Oran-Ride Developer Bot ===")
+    print("")
+    print("الأوامر المتوفرة:")
+    print("  help      عرض المساعدة")
+    print("  backup    إنشاء نسخة احتياطية")
+    print("  status    فحص حالة المشروع")
+    print("  gps       تطوير نظام GPS")
+    print("  search    تطوير محرك البحث")
+    print("  build     فحص المشروع قبل GitHub Actions")

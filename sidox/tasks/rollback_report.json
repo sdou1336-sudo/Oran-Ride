@@ -1,0 +1,15 @@
+{
+  "time": "2026-07-21T19:18:36.093485",
+  "status": "ROLLED_BACK",
+  "backup": "sidox/tasks/patch_backups/backup_20260721_191747",
+  "restored_files": [
+    "./app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+    "./app/src/main/java/com/oranride/app/NominatimRepository.kt",
+    "./app/src/main/java/com/oranride/app/MainActivity.kt",
+    "./tools/agent/current_source.kt",
+    "./app/src/main/java/com/oranride/app/Driver.kt",
+    "./app/src/main/java/com/oranride/app/DriverRepository.kt",
+    "./app/src/main/java/com/oranride/app/DriverViewModel.kt"
+  ],
+  "removed_new_files": []
+}

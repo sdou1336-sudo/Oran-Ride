@@ -1,0 +1,61 @@
+{
+  "created": "2026-07-21T19:07:21.799457",
+  "mode": "proposal_only",
+  "approved": false,
+  "task": "Add driver system like InDrive",
+  "targets": [
+    {
+      "file": "./app/src/main/java/com/oranride/app/MainActivity.kt",
+      "reason": "Related to requested feature",
+      "action": "review_and_modify"
+    },
+    {
+      "file": "./app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+      "reason": "Related to requested feature",
+      "action": "review_and_modify"
+    },
+    {
+      "file": "./app/src/main/java/com/oranride/app/SearchBar.kt",
+      "reason": "Related to requested feature",
+      "action": "review_and_modify"
+    },
+    {
+      "file": "./app/src/main/java/com/oranride/app/NominatimApi.kt",
+      "reason": "Related to requested feature",
+      "action": "review_and_modify"
+    },
+    {
+      "file": "./app/src/main/java/com/oranride/app/NominatimClient.kt",
+      "reason": "Related to requested feature",
+      "action": "review_and_modify"
+    },
+    {
+      "file": "./app/src/main/java/com/oranride/app/NominatimRepository.kt",
+      "reason": "Related to requested feature",
+      "action": "review_and_modify"
+    },
+    {
+      "file": "./app/src/main/java/com/oranride/app/LocationState.kt",
+      "reason": "Related to requested feature",
+      "action": "review_and_modify"
+    },
+    {
+      "file": "./app/src/main/java/com/oranride/app/LocationManager.kt",
+      "reason": "Related to requested feature",
+      "action": "review_and_modify"
+    },
+    {
+      "file": "./app/src/main/java/com/oranride/app/debug/UIState.kt",
+      "reason": "Related to requested feature",
+      "action": "review_and_modify"
+    },
+    {
+      "file": "./tools/agent/current_source.kt",
+      "reason": "Related to requested feature",
+      "action": "review_and_modify"
+    }
+  ],
+  "changes": [],
+  "confidence": "medium",
+  "note": "Waiting for approval before applying changes."
+}

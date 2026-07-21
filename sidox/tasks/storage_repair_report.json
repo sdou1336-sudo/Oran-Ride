@@ -1,0 +1,9 @@
+{
+  "time": "2026-07-21T19:37:39.583197",
+  "cleaned": [
+    "/data/data/com.termux/files/home/.gradle/caches",
+    "./app/build",
+    "./build"
+  ],
+  "failed": []
+}

@@ -1,0 +1,33 @@
+name: Sidox Analyzer
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+env:
+  GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run sidox analyzer
+        run: |
+          python3 sidox/analyzer.py
+
+      - name: Save sidox report history
+        run: |
+          python3 sidox/save_report.py
+
+
+      - name: Analyze with Gemini
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python3 sidox/gemini/analyze.py

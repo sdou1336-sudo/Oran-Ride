@@ -1,0 +1,53 @@
+{
+  "created": "2026-07-21T19:33:00.403717",
+  "mode": "proposal_only",
+  "approved": false,
+  "modify_files": [
+    "./app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+    "./app/src/main/java/com/oranride/app/NominatimRepository.kt",
+    "./app/src/main/java/com/oranride/app/MainActivity.kt",
+    "./tools/agent/current_source.kt"
+  ],
+  "create_files": [
+    "./app/src/main/java/com/oranride/app/Driver.kt",
+    "./app/src/main/java/com/oranride/app/DriverRepository.kt",
+    "./app/src/main/java/com/oranride/app/DriverViewModel.kt"
+  ],
+  "changes": [
+    {
+      "file": "./app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+      "action": "modify",
+      "reason": "Selected by decision engine"
+    },
+    {
+      "file": "./app/src/main/java/com/oranride/app/NominatimRepository.kt",
+      "action": "modify",
+      "reason": "Selected by decision engine"
+    },
+    {
+      "file": "./app/src/main/java/com/oranride/app/MainActivity.kt",
+      "action": "modify",
+      "reason": "Selected by decision engine"
+    },
+    {
+      "file": "./tools/agent/current_source.kt",
+      "action": "modify",
+      "reason": "Selected by decision engine"
+    },
+    {
+      "file": "./app/src/main/java/com/oranride/app/Driver.kt",
+      "action": "create",
+      "reason": "Required for driver system"
+    },
+    {
+      "file": "./app/src/main/java/com/oranride/app/DriverRepository.kt",
+      "action": "create",
+      "reason": "Required for driver system"
+    },
+    {
+      "file": "./app/src/main/java/com/oranride/app/DriverViewModel.kt",
+      "action": "create",
+      "reason": "Required for driver system"
+    }
+  ]
+}

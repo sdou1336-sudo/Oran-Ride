@@ -1,0 +1,6 @@
+{
+  "time": "2026-07-21T19:33:45.320833",
+  "type": "environment",
+  "reason": "Android resource compiler failed to start",
+  "action": "Check Gradle cache, memory and Termux build environment"
+}

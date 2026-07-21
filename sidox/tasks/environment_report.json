@@ -1,0 +1,12 @@
+{
+  "time": "2026-07-21T20:26:06.920512",
+  "path": "/data/data/com.termux/files/home",
+  "disk_total_mb": 228045,
+  "disk_free_mb": 174544,
+  "checks": {
+    "memory_available_kb": 8162688
+  },
+  "recommendation": [
+    "Storage is acceptable."
+  ]
+}

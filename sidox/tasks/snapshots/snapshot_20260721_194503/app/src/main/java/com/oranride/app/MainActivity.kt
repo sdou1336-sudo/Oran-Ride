@@ -11,7 +11,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.ui.Alignment
 import androidx.compose.foundation.text.KeyboardActions
 import kotlinx.coroutines.launch
@@ -46,19 +45,9 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun OranRideApp() {
 
-    val driverViewModel: DriverViewModel = viewModel()
-
-    LaunchedEffect(Unit) {
-        driverViewModel.loadDrivers()
-    }
-
     var currentPage by remember { mutableStateOf("الخريطة") }
     var selectedLat by remember { mutableStateOf(35.6969) }
     var selectedLon by remember { mutableStateOf(-0.6331) }
-    var rideLat by remember { mutableStateOf(35.6969) }
-    var rideLon by remember { mutableStateOf(-0.6331) }
-    var activeRideLat by remember { mutableStateOf(35.6969) }
-    var activeRideLon by remember { mutableStateOf(-0.6331) }
 
     Scaffold(
         bottomBar = {
@@ -69,8 +58,7 @@ fun OranRideApp() {
                     "الرحلات",
                     "البحث",
                     "الرسائل",
-                    "الحساب",
-                                            "السائق"
+                    "الحساب"
                 )
 
                 pages.forEach { page ->
@@ -116,8 +104,7 @@ fun OranRideApp() {
 
                 "الرسائل" -> MessagesPage()
 
-                "الحساب",
-                                            "السائق" -> DriverPage()
+                "الحساب" -> ProfilePage()
             }
         }
     }
@@ -127,9 +114,7 @@ fun OranRideApp() {
 @Composable
 fun MapPage(
     latitude: Double,
-    longitude: Double,
-    rideLat: Double = latitude,
-    rideLon: Double = longitude
+    longitude: Double
 ) {
 
     var mapView: MapView? = null
@@ -259,71 +244,4 @@ fun MessagesPage() {
 @Composable
 fun ProfilePage() {
     Text("صفحة الحساب")
-}
-
-
-@Composable
-fun DriverPage() {
-
-    val driverViewModel: DriverViewModel = viewModel()
-    val rideViewModel: RideViewModel = viewModel()
-    val drivers by driverViewModel.drivers.collectAsState()
-    val rides by rideViewModel.rides.collectAsState()
-    val selectedRide by rideViewModel.selectedRide.collectAsState()
-
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text("نظام السائق")
-
-        Text("طلبات الرحلات: ${rides.size}")
-
-        selectedRide?.let {
-            Text("الرحلة المختارة: ${it.pickup}")
-        }
-
-        rides.forEach { ride ->
-            Text("${ride.passengerName}: ${ride.pickup} -> ${ride.destination}")
-            Text("السعر: ${ride.price} DA")
-
-            Button(
-                onClick = {
-                    rideViewModel.acceptRide(ride.id)
-                    activeRideLat = ride.pickupLat
-                    activeRideLon = ride.pickupLon
-                }
-            ) {
-                Text(
-                    if (ride.accepted) "تم القبول"
-                    else "قبول الرحلة"
-                )
-
-                if (ride.accepted) {
-                    Text("موقع الراكب: ${ride.pickupLat}, ${ride.pickupLon}")
-                }
-            }
-        }
-
-        Text("عدد السائقين: ${drivers.size}")
-
-        drivers.forEach { driver ->
-            Text("${driver.name} - ${if (driver.available) "متاح" else "غير متاح"}")
-            Text("${driver.carModel} | ${driver.plateNumber}")
-
-            Button(
-                onClick = {
-                    driverViewModel.setDriverAvailability(
-                        driver.id,
-                        !driver.available
-                    )
-                }
-            ) {
-                Text(
-                    if (driver.available) "إيقاف التوفر"
-                    else "تفعيل التوفر"
-                )
-            }
-        }
-    }
 }

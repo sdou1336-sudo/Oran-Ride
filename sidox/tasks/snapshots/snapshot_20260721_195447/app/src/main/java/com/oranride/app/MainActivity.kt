@@ -55,10 +55,6 @@ fun OranRideApp() {
     var currentPage by remember { mutableStateOf("الخريطة") }
     var selectedLat by remember { mutableStateOf(35.6969) }
     var selectedLon by remember { mutableStateOf(-0.6331) }
-    var rideLat by remember { mutableStateOf(35.6969) }
-    var rideLon by remember { mutableStateOf(-0.6331) }
-    var activeRideLat by remember { mutableStateOf(35.6969) }
-    var activeRideLon by remember { mutableStateOf(-0.6331) }
 
     Scaffold(
         bottomBar = {
@@ -127,9 +123,7 @@ fun OranRideApp() {
 @Composable
 fun MapPage(
     latitude: Double,
-    longitude: Double,
-    rideLat: Double = latitude,
-    rideLon: Double = longitude
+    longitude: Double
 ) {
 
     var mapView: MapView? = null
@@ -264,66 +258,10 @@ fun ProfilePage() {
 
 @Composable
 fun DriverPage() {
-
-    val driverViewModel: DriverViewModel = viewModel()
-    val rideViewModel: RideViewModel = viewModel()
-    val drivers by driverViewModel.drivers.collectAsState()
-    val rides by rideViewModel.rides.collectAsState()
-    val selectedRide by rideViewModel.selectedRide.collectAsState()
-
-    Column(
+    Box(
         modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally
+        contentAlignment = Alignment.Center
     ) {
         Text("نظام السائق")
-
-        Text("طلبات الرحلات: ${rides.size}")
-
-        selectedRide?.let {
-            Text("الرحلة المختارة: ${it.pickup}")
-        }
-
-        rides.forEach { ride ->
-            Text("${ride.passengerName}: ${ride.pickup} -> ${ride.destination}")
-            Text("السعر: ${ride.price} DA")
-
-            Button(
-                onClick = {
-                    rideViewModel.acceptRide(ride.id)
-                    activeRideLat = ride.pickupLat
-                    activeRideLon = ride.pickupLon
-                }
-            ) {
-                Text(
-                    if (ride.accepted) "تم القبول"
-                    else "قبول الرحلة"
-                )
-
-                if (ride.accepted) {
-                    Text("موقع الراكب: ${ride.pickupLat}, ${ride.pickupLon}")
-                }
-            }
-        }
-
-        Text("عدد السائقين: ${drivers.size}")
-
-        drivers.forEach { driver ->
-            Text("${driver.name} - ${if (driver.available) "متاح" else "غير متاح"}")
-            Text("${driver.carModel} | ${driver.plateNumber}")
-
-            Button(
-                onClick = {
-                    driverViewModel.setDriverAvailability(
-                        driver.id,
-                        !driver.available
-                    )
-                }
-            ) {
-                Text(
-                    if (driver.available) "إيقاف التوفر"
-                    else "تفعيل التوفر"
-                )
-            }
-        }
     }
 }

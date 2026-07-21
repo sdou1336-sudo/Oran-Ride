@@ -1,0 +1,7 @@
+{
+  "enabled": true,
+  "input": "tools/ui_agent/current_screen.png",
+  "analysis_file": "tools/ui_agent/ui_state.json",
+  "status": "waiting_for_screenshot",
+  "next_step": "analyze_ui"
+}

@@ -1,0 +1,9 @@
+{
+  "created": "2026-07-21T18:39:40.986812",
+  "mode": "proposal_only",
+  "approved": false,
+  "problem": "Java heap space",
+  "category": "memory",
+  "changes": [],
+  "note": "Gemini suggestions will be stored here before applying"
+}

@@ -1,0 +1,12 @@
+{
+  "task": "Integrate UIStateHolder with MainActivity, SearchBar and NominatimRepository. Update currentScreen, searchQuery, searchResults, selectedPlace and lastError automatically.",
+  "file": "MainActivity.kt;SearchBar.kt;NominatimRepository.kt",
+  "status": "waiting",
+  "executor": "AI Developer Agent v2",
+  "execution": "file_opened",
+  "target_path": "backup_ai_20260719_234416/MainActivity.kt",
+  "backup": "backup_tasks/MainActivity.kt.1784647752.bak",
+  "file_size": 1015,
+  "lines": 31,
+  "patch_status": "loaded"
+}

@@ -1,0 +1,14 @@
+{
+  "time": "2026-07-21T20:20:42.424552",
+  "snapshot": "sidox/tasks/snapshots/snapshot_20260721_202042",
+  "existing_files": [
+    "./app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+    "./app/src/main/java/com/oranride/app/NominatimRepository.kt",
+    "./app/src/main/java/com/oranride/app/MainActivity.kt",
+    "./tools/agent/current_source.kt",
+    "./app/src/main/java/com/oranride/app/Driver.kt",
+    "./app/src/main/java/com/oranride/app/DriverRepository.kt",
+    "./app/src/main/java/com/oranride/app/DriverViewModel.kt"
+  ],
+  "new_files": []
+}

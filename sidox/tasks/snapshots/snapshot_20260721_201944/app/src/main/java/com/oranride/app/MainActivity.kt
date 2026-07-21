@@ -57,8 +57,6 @@ fun OranRideApp() {
     var selectedLon by remember { mutableStateOf(-0.6331) }
     var rideLat by remember { mutableStateOf(35.6969) }
     var rideLon by remember { mutableStateOf(-0.6331) }
-    var activeRideLat by remember { mutableStateOf(35.6969) }
-    var activeRideLon by remember { mutableStateOf(-0.6331) }
 
     Scaffold(
         bottomBar = {
@@ -290,8 +288,6 @@ fun DriverPage() {
             Button(
                 onClick = {
                     rideViewModel.acceptRide(ride.id)
-                    activeRideLat = ride.pickupLat
-                    activeRideLon = ride.pickupLon
                 }
             ) {
                 Text(

@@ -1,0 +1,19 @@
+{
+  "task": "Add driver system like InDrive",
+  "selected_files": [
+    "./app/src/main/java/com/oranride/app/MainActivity.kt",
+    "./app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+    "./app/src/main/java/com/oranride/app/SearchBar.kt",
+    "./app/src/main/java/com/oranride/app/NominatimApi.kt",
+    "./app/src/main/java/com/oranride/app/NominatimClient.kt",
+    "./app/src/main/java/com/oranride/app/NominatimRepository.kt",
+    "./app/src/main/java/com/oranride/app/LocationState.kt",
+    "./app/src/main/java/com/oranride/app/LocationManager.kt",
+    "./app/src/main/java/com/oranride/app/Driver.kt",
+    "./app/src/main/java/com/oranride/app/DriverRepository.kt",
+    "./app/src/main/java/com/oranride/app/DriverViewModel.kt",
+    "./app/src/main/java/com/oranride/app/debug/UIState.kt",
+    "./tools/agent/current_source.kt"
+  ],
+  "status": "files_selected"
+}

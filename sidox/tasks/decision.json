@@ -1,0 +1,27 @@
+{
+  "time": "2026-07-21T19:33:00.353368",
+  "task": "Add driver system like InDrive",
+  "decision": [
+    {
+      "file": "./app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+      "score": 7,
+      "action": "review_modify"
+    },
+    {
+      "file": "./app/src/main/java/com/oranride/app/NominatimRepository.kt",
+      "score": 4,
+      "action": "review_modify"
+    },
+    {
+      "file": "./app/src/main/java/com/oranride/app/MainActivity.kt",
+      "score": 2,
+      "action": "review_modify"
+    },
+    {
+      "file": "./tools/agent/current_source.kt",
+      "score": 2,
+      "action": "review_modify"
+    }
+  ],
+  "status": "decision_filename_improved"
+}

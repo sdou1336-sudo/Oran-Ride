@@ -55,10 +55,6 @@ fun OranRideApp() {
     var currentPage by remember { mutableStateOf("الخريطة") }
     var selectedLat by remember { mutableStateOf(35.6969) }
     var selectedLon by remember { mutableStateOf(-0.6331) }
-    var rideLat by remember { mutableStateOf(35.6969) }
-    var rideLon by remember { mutableStateOf(-0.6331) }
-    var activeRideLat by remember { mutableStateOf(35.6969) }
-    var activeRideLon by remember { mutableStateOf(-0.6331) }
 
     Scaffold(
         bottomBar = {
@@ -127,9 +123,7 @@ fun OranRideApp() {
 @Composable
 fun MapPage(
     latitude: Double,
-    longitude: Double,
-    rideLat: Double = latitude,
-    rideLon: Double = longitude
+    longitude: Double
 ) {
 
     var mapView: MapView? = null
@@ -290,18 +284,12 @@ fun DriverPage() {
             Button(
                 onClick = {
                     rideViewModel.acceptRide(ride.id)
-                    activeRideLat = ride.pickupLat
-                    activeRideLon = ride.pickupLon
                 }
             ) {
                 Text(
                     if (ride.accepted) "تم القبول"
                     else "قبول الرحلة"
                 )
-
-                if (ride.accepted) {
-                    Text("موقع الراكب: ${ride.pickupLat}, ${ride.pickupLon}")
-                }
             }
         }
 

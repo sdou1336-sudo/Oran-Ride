@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.gradle/
+app/build/
+build/
+*.bin
+*.lock
+
+.gradle/
+**/build/
+build/

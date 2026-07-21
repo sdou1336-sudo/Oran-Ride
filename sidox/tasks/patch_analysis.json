@@ -1,0 +1,91 @@
+{
+  "time": "2026-07-21T19:08:09.483768",
+  "task": "Add driver system like InDrive",
+  "analysis": [
+    {
+      "file": "./app/src/main/java/com/oranride/app/MainActivity.kt",
+      "size": 6334,
+      "contains": [
+        "class",
+        "Repository",
+        "Map",
+        "Location"
+      ]
+    },
+    {
+      "file": "./app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+      "size": 896,
+      "contains": [
+        "class",
+        "data",
+        "Database"
+      ]
+    },
+    {
+      "file": "./app/src/main/java/com/oranride/app/SearchBar.kt",
+      "size": 3335,
+      "contains": [
+        "data",
+        "Repository"
+      ]
+    },
+    {
+      "file": "./app/src/main/java/com/oranride/app/NominatimApi.kt",
+      "size": 1048,
+      "contains": [
+        "class",
+        "data",
+        "Map"
+      ]
+    },
+    {
+      "file": "./app/src/main/java/com/oranride/app/NominatimClient.kt",
+      "size": 551,
+      "contains": [
+        "class"
+      ]
+    },
+    {
+      "file": "./app/src/main/java/com/oranride/app/NominatimRepository.kt",
+      "size": 1481,
+      "contains": [
+        "Repository",
+        "Map"
+      ]
+    },
+    {
+      "file": "./app/src/main/java/com/oranride/app/LocationState.kt",
+      "size": 168,
+      "contains": [
+        "class",
+        "data",
+        "Location"
+      ]
+    },
+    {
+      "file": "./app/src/main/java/com/oranride/app/LocationManager.kt",
+      "size": 736,
+      "contains": [
+        "class",
+        "Location"
+      ]
+    },
+    {
+      "file": "./app/src/main/java/com/oranride/app/debug/UIState.kt",
+      "size": 335,
+      "contains": [
+        "class",
+        "data"
+      ]
+    },
+    {
+      "file": "./tools/agent/current_source.kt",
+      "size": 1015,
+      "contains": [
+        "class",
+        "ViewModel"
+      ]
+    }
+  ],
+  "status": "content_analyzed"
+}
