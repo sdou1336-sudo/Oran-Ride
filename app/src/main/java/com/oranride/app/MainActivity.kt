@@ -1,5 +1,5 @@
-import com.oranride.app.NominatimRepository
 package com.oranride.app
+import com.oranride.app.NominatimRepository
 
 import android.os.Bundle
 import androidx.activity.result.contract.ActivityResultContracts
