@@ -1,35 +1,42 @@
-import os, json
-
-report = {
-    "status": "UNKNOWN",
-    "error": None,
-    "category": None,
-    "task": None
-}
+import os
+import json
+from datetime import datetime
 
 log_file = "build.log"
+report_dir = "sidox/reports"
+
+os.makedirs(report_dir, exist_ok=True)
+
+result = {
+    "time": datetime.now().isoformat(),
+    "status": "UNKNOWN",
+    "problem": "No detected issue",
+    "category": "unknown"
+}
 
 if os.path.exists(log_file):
     log = open(log_file, "r", errors="ignore").read()
 
-    if "OutOfMemoryError" in log or "Java heap space" in log:
-        report["status"] = "FAILED"
-        report["error"] = "Java heap space"
-        report["category"] = "Build Memory"
+    checks = [
+        ("OutOfMemoryError", "Java heap space", "memory"),
+        ("Compilation failed", "Compilation error", "kotlin/java"),
+        ("DexArchiveMergerException", "Dex merge error", "android build"),
+        ("BUILD FAILED", "Gradle build failed", "gradle")
+    ]
 
-    elif "BUILD FAILED" in log:
-        report["status"] = "FAILED"
-        report["error"] = "Build failed"
-        report["category"] = "Gradle/Kotlin"
-
+    for key, problem, category in checks:
+        if key in log:
+            result["status"] = "FAILED"
+            result["problem"] = problem
+            result["category"] = category
+            break
     else:
-        report["status"] = "SUCCESS"
+        result["status"] = "SUCCESS"
+
 else:
-    report["status"] = "NO_LOG"
+    result["status"] = "NO_LOG"
 
-os.makedirs("sidox/reports", exist_ok=True)
+with open(f"{report_dir}/latest_report.json", "w") as f:
+    json.dump(result, f, indent=2)
 
-with open("sidox/reports/latest_report.json", "w") as f:
-    json.dump(report, f, indent=2)
-
-print(json.dumps(report, indent=2))
+print(json.dumps(result, indent=2))
