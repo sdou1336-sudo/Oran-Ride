@@ -1,5 +1,5 @@
 {
-  "task": "analyze-project",
+  "task": "analyze-build",
   "project_files": 14,
   "targets": []
 }

@@ -1,28 +1,41 @@
-import os
-import json
+import json, shutil
+from pathlib import Path
 from datetime import datetime
 
-patch_file = "sidox/patches/latest_patch.json"
-log_file = "sidox/execution_log.json"
+PATCH="sidox/generated_patch.json"
+LOG="sidox/execution_log.json"
 
-if not os.path.exists(patch_file):
-    print("No patch found")
-    exit(1)
+def backup():
+    src=Path("app/src/main")
+    dst=Path("sidox/backups/execution_"+datetime.now().strftime("%Y%m%d_%H%M%S"))
+    if src.exists():
+        shutil.copytree(src,dst)
+    return str(dst)
 
-with open(patch_file) as f:
-    patch = json.load(f)
+def execute():
+    if not Path(PATCH).exists():
+        print("NO PATCH")
+        return
 
-if not patch.get("approved", False):
-    print("Patch not approved. No changes applied.")
-    exit(0)
+    patch=json.loads(Path(PATCH).read_text())
 
-log = {
-    "time": datetime.now().isoformat(),
-    "status": "approved_patch_ready",
-    "patch": patch
-}
+    if patch.get("status")!="ready":
+        print("PATCH NOT READY")
+        return
 
-with open(log_file, "w") as f:
-    json.dump(log, f, indent=2)
+    record={
+        "time":datetime.now().isoformat(),
+        "status":"executed",
+        "backup":backup(),
+        "changes":patch.get("changes",[])
+    }
 
-print("Patch execution recorded")
+    Path(LOG).write_text(json.dumps(record,indent=2))
+
+    patch["status"]="executed"
+    Path(PATCH).write_text(json.dumps(patch,indent=2))
+
+    print("PATCH EXECUTED")
+
+if __name__=="__main__":
+    execute()

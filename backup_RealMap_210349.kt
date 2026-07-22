@@ -77,3 +77,5 @@ fun RealMap(
         }
     )
 }
+// Sidox generated code
+// Task: أضف زر البحث في الصفحة الرئيسية

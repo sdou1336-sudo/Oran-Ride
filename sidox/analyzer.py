@@ -11,7 +11,8 @@ result = {
     "time": datetime.now().isoformat(),
     "status": "UNKNOWN",
     "problem": "No detected issue",
-    "category": "unknown"
+    "category": "unknown",
+    "targets": []
 }
 
 if os.path.exists(log_file):
