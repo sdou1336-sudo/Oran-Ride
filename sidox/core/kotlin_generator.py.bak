@@ -1,14 +1,8 @@
-
-
+import sys\nsys.path.append(".")\nfrom sidox.core.kotlin_templates import TEMPLATES
+from kotlin_templates import TEMPLATES
 #!/usr/bin/env python3
-import sys
-sys.path.append(".")
-from sidox.core.kotlin_templates import TEMPLATES
 
 import json
-import sys
-sys.path.append(".")
-from sidox.core.kotlin_templates import TEMPLATES
 from pathlib import Path
 from datetime import datetime
 

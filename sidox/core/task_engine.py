@@ -11,6 +11,7 @@ PATCH_FILE = Path("sidox/code_patch.json")
 BASE = Path("app/src/main/java/com/oranride/app")
 
 KEYWORDS = {
+    "map": ["RealMap.kt","LocationManager.kt","MainActivity.kt"],
     "driver": [
         "Driver.kt",
         "DriverViewModel.kt"
@@ -23,6 +24,7 @@ KEYWORDS = {
         "SearchBar.kt",
         "NominatimRepository.kt"
     ],
+    "map": ["RealMap.kt","LocationManager.kt","MainActivity.kt"],
     "ride": [
         "RideRequest.kt",
         "RideViewModel.kt"
@@ -75,7 +77,7 @@ patch = {
 
 for name in plan["targets"]:
     path = BASE / name
-    if path.exists():
+    if True:
         patch["targets"].append(str(path))
         patch["changes"].append({
             "file": str(path),

@@ -28,11 +28,10 @@ results = []
 for item in data.get("files", []):
     file = Path(item["file"])
 
-    if not file.exists():
-        print("Missing:", file)
-        continue
+    file.parent.mkdir(parents=True, exist_ok=True)
 
-    shutil.copy2(file, str(file) + ".bak")
+    if file.exists():
+        shutil.copy2(file, str(file) + ".bak")
 
     content = item.get("content", "")
     if content.strip():
