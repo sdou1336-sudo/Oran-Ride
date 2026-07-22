@@ -27,3 +27,6 @@ jobs:
 
       - name: Check project structure
         run: python3 sidox/project_analyzer.py
+
+      - name: Build Android
+        run: ./gradlew assembleDebug
