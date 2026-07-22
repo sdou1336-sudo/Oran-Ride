@@ -1,0 +1,15 @@
+{
+  "task": "Transform Oran-Ride into an inDrive-like ride app",
+  "features": [
+    "full screen map home",
+    "passenger location",
+    "driver location tracking",
+    "search destination",
+    "ride request flow",
+    "driver accept or reject ride",
+    "trip states",
+    "bottom navigation",
+    "inDrive style Compose UI"
+  ],
+  "mode": "analyze_generate_patch_build"
+}
