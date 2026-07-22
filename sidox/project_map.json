@@ -1,657 +1,1811 @@
 {
-  "files": [
-    "build.gradle.kts",
-    "settings.gradle.kts",
-    "backup_RealMap_210349.kt",
-    "backup_RealMap_210619.kt",
-    "backup_map_223834.kt",
-    "backup_real_224348.kt",
-    "backup_real_224531.kt",
-    "backup_real_224604.kt",
-    "app/build.gradle.kts",
-    "backup_20260719_210117/RealMap.kt",
-    "backup_20260719_210117/Screens.kt",
-    "backup_20260719_210117/OranRideViewModel.kt",
-    "backup_20260719_210117/OranMap.kt",
-    "backup_20260719_210117/RetrofitClient.kt",
-    "backup_20260719_210117/PlaceSearch.kt",
-    "backup_223708/OranMap.kt",
-    "backup_223923/OranMap.kt",
-    "backup_224215/OranMap.kt",
-    "backup_225232/OranMap.kt",
-    "backup_ai_20260719_234416/MainActivity.kt",
-    "backup_ai_20260719_234416/OranMap.kt",
-    "backup_ai_20260719_234416/OranRideViewModel.kt",
-    "backup_ai_20260719_234416/Screens.kt",
-    "backup_ai_20260719_234416/RealMap.kt",
-    "backup_ai_20260719_234416/LocationHelper.kt",
-    "backup_ai_20260719_234416/Color.kt",
-    "backup_ai_20260719_234416/Theme.kt",
-    "backup_ai_20260719_234416/Type.kt",
-    "backup_ai_20260719_234416/OranRideRepository.kt",
-    "backup_ai_20260719_234416/OranRideDatabase.kt",
-    "backup_ai_20260719_234416/PlaceSearch.kt",
-    "backup_ai_20260719_234416/RetrofitClient.kt",
-    "backup_ai_20260719_234416/LocalPlaces.kt",
-    "backup_ai_20260719_234416/RouteService.kt",
-    "backup_ai_20260719_234614/MainActivity.kt",
-    "backup_ai_20260719_234614/OranMap.kt",
-    "backup_ai_20260719_234614/OranRideViewModel.kt",
-    "backup_ai_20260719_234614/Screens.kt",
-    "backup_ai_20260719_234614/RealMap.kt",
-    "backup_ai_20260719_234614/LocationHelper.kt",
-    "backup_ai_20260719_234614/Color.kt",
-    "backup_ai_20260719_234614/Theme.kt",
-    "backup_ai_20260719_234614/Type.kt",
-    "backup_ai_20260719_234614/OranRideRepository.kt",
-    "backup_ai_20260719_234614/OranRideDatabase.kt",
-    "backup_ai_20260719_234614/PlaceSearch.kt",
-    "backup_ai_20260719_234614/RetrofitClient.kt",
-    "backup_ai_20260719_234614/LocalPlaces.kt",
-    "backup_ai_20260719_234614/RouteService.kt",
-    "backup_234751/MainActivity.kt",
-    "backup_234751/OranMap.kt",
-    "backup_234751/OranRideViewModel.kt",
-    "backup_234751/Screens.kt",
-    "backup_234751/RealMap.kt",
-    "backup_234751/LocationHelper.kt",
-    "backup_234751/Color.kt",
-    "backup_234751/Theme.kt",
-    "backup_234751/Type.kt",
-    "backup_234751/OranRideRepository.kt",
-    "backup_234751/OranRideDatabase.kt",
-    "backup_234751/PlaceSearch.kt",
-    "backup_234751/RetrofitClient.kt",
-    "backup_234751/LocalPlaces.kt",
-    "backup_234751/RouteService.kt",
-    "backup_234911/MainActivity.kt",
-    "backup_234911/OranMap.kt",
-    "backup_234911/OranRideViewModel.kt",
-    "backup_234911/Screens.kt",
-    "backup_234911/RealMap.kt",
-    "backup_234911/LocationHelper.kt",
-    "backup_234911/Color.kt",
-    "backup_234911/Theme.kt",
-    "backup_234911/Type.kt",
-    "backup_234911/OranRideRepository.kt",
-    "backup_234911/OranRideDatabase.kt",
-    "backup_234911/PlaceSearch.kt",
-    "backup_234911/RetrofitClient.kt",
-    "backup_234911/LocalPlaces.kt",
-    "backup_234911/RouteService.kt",
-    "backup_234911/Driver.kt",
-    "backup_234911/Passenger.kt",
-    "backup_234911/Ride.kt",
-    "backup_before_indrive/Screens.kt",
-    "backup_nominatim/NominatimApi.kt",
-    "backup_nominatim/NominatimRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_202042/tools/agent/current_source.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_202042/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_202042/app/src/main/java/com/oranride/app/NominatimRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_202042/app/src/main/java/com/oranride/app/MainActivity.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_202042/app/src/main/java/com/oranride/app/Driver.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_202042/app/src/main/java/com/oranride/app/DriverRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_202042/app/src/main/java/com/oranride/app/DriverViewModel.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_201944/tools/agent/current_source.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_201944/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_201944/app/src/main/java/com/oranride/app/NominatimRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_201944/app/src/main/java/com/oranride/app/MainActivity.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_201944/app/src/main/java/com/oranride/app/Driver.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_201944/app/src/main/java/com/oranride/app/DriverRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_201944/app/src/main/java/com/oranride/app/DriverViewModel.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200714/tools/agent/current_source.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200714/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200714/app/src/main/java/com/oranride/app/NominatimRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200714/app/src/main/java/com/oranride/app/MainActivity.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200714/app/src/main/java/com/oranride/app/Driver.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200714/app/src/main/java/com/oranride/app/DriverRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200714/app/src/main/java/com/oranride/app/DriverViewModel.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200606/tools/agent/current_source.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200606/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200606/app/src/main/java/com/oranride/app/NominatimRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200606/app/src/main/java/com/oranride/app/MainActivity.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200606/app/src/main/java/com/oranride/app/Driver.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200606/app/src/main/java/com/oranride/app/DriverRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200606/app/src/main/java/com/oranride/app/DriverViewModel.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200423/tools/agent/current_source.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200423/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200423/app/src/main/java/com/oranride/app/NominatimRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200423/app/src/main/java/com/oranride/app/MainActivity.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200423/app/src/main/java/com/oranride/app/Driver.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200423/app/src/main/java/com/oranride/app/DriverRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200423/app/src/main/java/com/oranride/app/DriverViewModel.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200407/tools/agent/current_source.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200407/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200407/app/src/main/java/com/oranride/app/NominatimRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200407/app/src/main/java/com/oranride/app/MainActivity.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200407/app/src/main/java/com/oranride/app/Driver.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200407/app/src/main/java/com/oranride/app/DriverRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200407/app/src/main/java/com/oranride/app/DriverViewModel.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200301/tools/agent/current_source.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200301/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200301/app/src/main/java/com/oranride/app/NominatimRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200301/app/src/main/java/com/oranride/app/MainActivity.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200301/app/src/main/java/com/oranride/app/Driver.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200301/app/src/main/java/com/oranride/app/DriverRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200301/app/src/main/java/com/oranride/app/DriverViewModel.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200202/tools/agent/current_source.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200202/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200202/app/src/main/java/com/oranride/app/NominatimRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200202/app/src/main/java/com/oranride/app/MainActivity.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200202/app/src/main/java/com/oranride/app/Driver.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200202/app/src/main/java/com/oranride/app/DriverRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200202/app/src/main/java/com/oranride/app/DriverViewModel.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200108/tools/agent/current_source.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200108/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200108/app/src/main/java/com/oranride/app/NominatimRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200108/app/src/main/java/com/oranride/app/MainActivity.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200108/app/src/main/java/com/oranride/app/Driver.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200108/app/src/main/java/com/oranride/app/DriverRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_200108/app/src/main/java/com/oranride/app/DriverViewModel.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195859/tools/agent/current_source.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195859/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195859/app/src/main/java/com/oranride/app/NominatimRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195859/app/src/main/java/com/oranride/app/MainActivity.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195859/app/src/main/java/com/oranride/app/Driver.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195859/app/src/main/java/com/oranride/app/DriverRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195859/app/src/main/java/com/oranride/app/DriverViewModel.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195811/tools/agent/current_source.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195811/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195811/app/src/main/java/com/oranride/app/NominatimRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195811/app/src/main/java/com/oranride/app/MainActivity.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195811/app/src/main/java/com/oranride/app/Driver.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195811/app/src/main/java/com/oranride/app/DriverRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195811/app/src/main/java/com/oranride/app/DriverViewModel.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195732/tools/agent/current_source.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195732/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195732/app/src/main/java/com/oranride/app/NominatimRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195732/app/src/main/java/com/oranride/app/MainActivity.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195732/app/src/main/java/com/oranride/app/Driver.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195732/app/src/main/java/com/oranride/app/DriverRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195732/app/src/main/java/com/oranride/app/DriverViewModel.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195533/tools/agent/current_source.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195533/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195533/app/src/main/java/com/oranride/app/NominatimRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195533/app/src/main/java/com/oranride/app/MainActivity.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195533/app/src/main/java/com/oranride/app/Driver.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195533/app/src/main/java/com/oranride/app/DriverRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195533/app/src/main/java/com/oranride/app/DriverViewModel.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195447/tools/agent/current_source.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195447/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195447/app/src/main/java/com/oranride/app/NominatimRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195447/app/src/main/java/com/oranride/app/MainActivity.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195447/app/src/main/java/com/oranride/app/Driver.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195447/app/src/main/java/com/oranride/app/DriverRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_195447/app/src/main/java/com/oranride/app/DriverViewModel.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_194503/tools/agent/current_source.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_194503/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_194503/app/src/main/java/com/oranride/app/NominatimRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_194503/app/src/main/java/com/oranride/app/MainActivity.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_194503/app/src/main/java/com/oranride/app/Driver.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_194503/app/src/main/java/com/oranride/app/DriverRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_194503/app/src/main/java/com/oranride/app/DriverViewModel.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_193300/tools/agent/current_source.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_193300/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_193300/app/src/main/java/com/oranride/app/NominatimRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_193300/app/src/main/java/com/oranride/app/MainActivity.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_193300/app/src/main/java/com/oranride/app/Driver.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_193300/app/src/main/java/com/oranride/app/DriverRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_193300/app/src/main/java/com/oranride/app/DriverViewModel.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_191919/tools/agent/current_source.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_191919/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_191919/app/src/main/java/com/oranride/app/NominatimRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_191919/app/src/main/java/com/oranride/app/MainActivity.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_191919/app/src/main/java/com/oranride/app/Driver.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_191919/app/src/main/java/com/oranride/app/DriverRepository.kt",
-    "sidox/tasks/snapshots/snapshot_20260721_191919/app/src/main/java/com/oranride/app/DriverViewModel.kt",
-    "sidox/tasks/patch_backups/backup_20260721_191747/tools/agent/current_source.kt",
-    "sidox/tasks/patch_backups/backup_20260721_191747/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
-    "sidox/tasks/patch_backups/backup_20260721_191747/app/src/main/java/com/oranride/app/NominatimRepository.kt",
-    "sidox/tasks/patch_backups/backup_20260721_191747/app/src/main/java/com/oranride/app/MainActivity.kt",
-    "sidox/tasks/patch_backups/backup_20260721_191747/app/src/main/java/com/oranride/app/Driver.kt",
-    "sidox/tasks/patch_backups/backup_20260721_191747/app/src/main/java/com/oranride/app/DriverRepository.kt",
-    "sidox/tasks/patch_backups/backup_20260721_191747/app/src/main/java/com/oranride/app/DriverViewModel.kt",
-    "sidox/backups/backup_20260721_184018/build.gradle.kts",
-    "sidox/backups/backup_20260721_184018/settings.gradle.kts",
-    "sidox/backups/backup_20260721_184018/backup_RealMap_210349.kt",
-    "sidox/backups/backup_20260721_184018/backup_RealMap_210619.kt",
-    "sidox/backups/backup_20260721_184018/backup_map_223834.kt",
-    "sidox/backups/backup_20260721_184018/backup_real_224348.kt",
-    "sidox/backups/backup_20260721_184018/backup_real_224531.kt",
-    "sidox/backups/backup_20260721_184018/backup_real_224604.kt",
-    "sidox/backups/manual_20260721_210620/MainActivity.kt",
-    "sidox/backups/manual_20260721_210620/Driver.kt",
-    "sidox/backups/manual_20260721_210620/DriverRepository.kt",
-    "sidox/backups/manual_20260721_210620/DriverViewModel.kt",
-    "sidox/backups/manual_20260721_221758/AndroidManifest.xml",
-    "sidox/backups/manual_20260721_222158/AndroidManifest.xml",
-    "sidox/backups/execution_20260721_223742/AndroidManifest.xml",
-    "sidox/backups/execution_20260721_223742/res/values/styles.xml",
-    "sidox/backups/execution_20260721_223742/java/com/oranride/app/MainActivity.kt",
-    "sidox/backups/execution_20260721_223742/java/com/oranride/app/PlacesDatabase.kt",
-    "sidox/backups/execution_20260721_223742/java/com/oranride/app/SearchBar.kt",
-    "sidox/backups/execution_20260721_223742/java/com/oranride/app/NominatimApi.kt",
-    "sidox/backups/execution_20260721_223742/java/com/oranride/app/NominatimClient.kt",
-    "sidox/backups/execution_20260721_223742/java/com/oranride/app/NominatimRepository.kt",
-    "sidox/backups/execution_20260721_223742/java/com/oranride/app/LocationState.kt",
-    "sidox/backups/execution_20260721_223742/java/com/oranride/app/LocationManager.kt",
-    "sidox/backups/execution_20260721_223742/java/com/oranride/app/Driver.kt",
-    "sidox/backups/execution_20260721_223742/java/com/oranride/app/DriverRepository.kt",
-    "sidox/backups/execution_20260721_223742/java/com/oranride/app/DriverViewModel.kt",
-    "sidox/backups/execution_20260721_223742/java/com/oranride/app/RideRequest.kt",
-    "sidox/backups/execution_20260721_223742/java/com/oranride/app/RideRepository.kt",
-    "sidox/backups/execution_20260721_223742/java/com/oranride/app/RideViewModel.kt",
-    "sidox/backups/execution_20260721_223742/java/com/oranride/app/debug/UIState.kt",
-    "sidox/backups/manual_20260721_222158/res/values/styles.xml",
-    "sidox/backups/manual_20260721_222158/java/com/oranride/app/MainActivity.kt",
-    "sidox/backups/manual_20260721_222158/java/com/oranride/app/PlacesDatabase.kt",
-    "sidox/backups/manual_20260721_222158/java/com/oranride/app/SearchBar.kt",
-    "sidox/backups/manual_20260721_222158/java/com/oranride/app/NominatimApi.kt",
-    "sidox/backups/manual_20260721_222158/java/com/oranride/app/NominatimClient.kt",
-    "sidox/backups/manual_20260721_222158/java/com/oranride/app/NominatimRepository.kt",
-    "sidox/backups/manual_20260721_222158/java/com/oranride/app/LocationState.kt",
-    "sidox/backups/manual_20260721_222158/java/com/oranride/app/LocationManager.kt",
-    "sidox/backups/manual_20260721_222158/java/com/oranride/app/Driver.kt",
-    "sidox/backups/manual_20260721_222158/java/com/oranride/app/DriverRepository.kt",
-    "sidox/backups/manual_20260721_222158/java/com/oranride/app/DriverViewModel.kt",
-    "sidox/backups/manual_20260721_222158/java/com/oranride/app/RideRequest.kt",
-    "sidox/backups/manual_20260721_222158/java/com/oranride/app/RideRepository.kt",
-    "sidox/backups/manual_20260721_222158/java/com/oranride/app/RideViewModel.kt",
-    "sidox/backups/manual_20260721_222158/java/com/oranride/app/debug/UIState.kt",
-    "sidox/backups/manual_20260721_221758/res/values/styles.xml",
-    "sidox/backups/manual_20260721_221758/java/com/oranride/app/MainActivity.kt",
-    "sidox/backups/manual_20260721_221758/java/com/oranride/app/PlacesDatabase.kt",
-    "sidox/backups/manual_20260721_221758/java/com/oranride/app/SearchBar.kt",
-    "sidox/backups/manual_20260721_221758/java/com/oranride/app/NominatimApi.kt",
-    "sidox/backups/manual_20260721_221758/java/com/oranride/app/NominatimClient.kt",
-    "sidox/backups/manual_20260721_221758/java/com/oranride/app/NominatimRepository.kt",
-    "sidox/backups/manual_20260721_221758/java/com/oranride/app/LocationState.kt",
-    "sidox/backups/manual_20260721_221758/java/com/oranride/app/LocationManager.kt",
-    "sidox/backups/manual_20260721_221758/java/com/oranride/app/Driver.kt",
-    "sidox/backups/manual_20260721_221758/java/com/oranride/app/DriverRepository.kt",
-    "sidox/backups/manual_20260721_221758/java/com/oranride/app/DriverViewModel.kt",
-    "sidox/backups/manual_20260721_221758/java/com/oranride/app/RideRequest.kt",
-    "sidox/backups/manual_20260721_221758/java/com/oranride/app/RideRepository.kt",
-    "sidox/backups/manual_20260721_221758/java/com/oranride/app/RideViewModel.kt",
-    "sidox/backups/manual_20260721_221758/java/com/oranride/app/debug/UIState.kt",
-    "sidox/backups/backup_20260721_184018/app/build.gradle.kts",
-    "sidox/backups/backup_20260721_184018/backup_20260719_210117/RealMap.kt",
-    "sidox/backups/backup_20260721_184018/backup_20260719_210117/Screens.kt",
-    "sidox/backups/backup_20260721_184018/backup_20260719_210117/OranRideViewModel.kt",
-    "sidox/backups/backup_20260721_184018/backup_20260719_210117/OranMap.kt",
-    "sidox/backups/backup_20260721_184018/backup_20260719_210117/RetrofitClient.kt",
-    "sidox/backups/backup_20260721_184018/backup_20260719_210117/PlaceSearch.kt",
-    "sidox/backups/backup_20260721_184018/backup_223708/OranMap.kt",
-    "sidox/backups/backup_20260721_184018/backup_223923/OranMap.kt",
-    "sidox/backups/backup_20260721_184018/backup_224215/OranMap.kt",
-    "sidox/backups/backup_20260721_184018/backup_225232/OranMap.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234416/MainActivity.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234416/OranMap.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234416/OranRideViewModel.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234416/Screens.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234416/RealMap.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234416/LocationHelper.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234416/Color.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234416/Theme.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234416/Type.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234416/OranRideRepository.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234416/OranRideDatabase.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234416/PlaceSearch.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234416/RetrofitClient.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234416/LocalPlaces.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234416/RouteService.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234614/MainActivity.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234614/OranMap.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234614/OranRideViewModel.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234614/Screens.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234614/RealMap.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234614/LocationHelper.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234614/Color.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234614/Theme.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234614/Type.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234614/OranRideRepository.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234614/OranRideDatabase.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234614/PlaceSearch.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234614/RetrofitClient.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234614/LocalPlaces.kt",
-    "sidox/backups/backup_20260721_184018/backup_ai_20260719_234614/RouteService.kt",
-    "sidox/backups/backup_20260721_184018/backup_234751/MainActivity.kt",
-    "sidox/backups/backup_20260721_184018/backup_234751/OranMap.kt",
-    "sidox/backups/backup_20260721_184018/backup_234751/OranRideViewModel.kt",
-    "sidox/backups/backup_20260721_184018/backup_234751/Screens.kt",
-    "sidox/backups/backup_20260721_184018/backup_234751/RealMap.kt",
-    "sidox/backups/backup_20260721_184018/backup_234751/LocationHelper.kt",
-    "sidox/backups/backup_20260721_184018/backup_234751/Color.kt",
-    "sidox/backups/backup_20260721_184018/backup_234751/Theme.kt",
-    "sidox/backups/backup_20260721_184018/backup_234751/Type.kt",
-    "sidox/backups/backup_20260721_184018/backup_234751/OranRideRepository.kt",
-    "sidox/backups/backup_20260721_184018/backup_234751/OranRideDatabase.kt",
-    "sidox/backups/backup_20260721_184018/backup_234751/PlaceSearch.kt",
-    "sidox/backups/backup_20260721_184018/backup_234751/RetrofitClient.kt",
-    "sidox/backups/backup_20260721_184018/backup_234751/LocalPlaces.kt",
-    "sidox/backups/backup_20260721_184018/backup_234751/RouteService.kt",
-    "sidox/backups/backup_20260721_184018/backup_234911/MainActivity.kt",
-    "sidox/backups/backup_20260721_184018/backup_234911/OranMap.kt",
-    "sidox/backups/backup_20260721_184018/backup_234911/OranRideViewModel.kt",
-    "sidox/backups/backup_20260721_184018/backup_234911/Screens.kt",
-    "sidox/backups/backup_20260721_184018/backup_234911/RealMap.kt",
-    "sidox/backups/backup_20260721_184018/backup_234911/LocationHelper.kt",
-    "sidox/backups/backup_20260721_184018/backup_234911/Color.kt",
-    "sidox/backups/backup_20260721_184018/backup_234911/Theme.kt",
-    "sidox/backups/backup_20260721_184018/backup_234911/Type.kt",
-    "sidox/backups/backup_20260721_184018/backup_234911/OranRideRepository.kt",
-    "sidox/backups/backup_20260721_184018/backup_234911/OranRideDatabase.kt",
-    "sidox/backups/backup_20260721_184018/backup_234911/PlaceSearch.kt",
-    "sidox/backups/backup_20260721_184018/backup_234911/RetrofitClient.kt",
-    "sidox/backups/backup_20260721_184018/backup_234911/LocalPlaces.kt",
-    "sidox/backups/backup_20260721_184018/backup_234911/RouteService.kt",
-    "sidox/backups/backup_20260721_184018/backup_234911/Driver.kt",
-    "sidox/backups/backup_20260721_184018/backup_234911/Passenger.kt",
-    "sidox/backups/backup_20260721_184018/backup_234911/Ride.kt",
-    "sidox/backups/backup_20260721_184018/backup_before_indrive/Screens.kt",
-    "sidox/backups/backup_20260721_184018/backup_nominatim/NominatimApi.kt",
-    "sidox/backups/backup_20260721_184018/backup_nominatim/NominatimRepository.kt",
-    "sidox/backups/backup_20260721_184018/tools/agent/current_source.kt",
-    "sidox/backups/backup_20260721_184018/backup_before_indrive/java/com/example/MainActivity.kt",
-    "sidox/backups/backup_20260721_184018/backup_before_indrive/java/com/example/ui/OranMap.kt",
-    "sidox/backups/backup_20260721_184018/backup_before_indrive/java/com/example/ui/OranRideViewModel.kt",
-    "sidox/backups/backup_20260721_184018/backup_before_indrive/java/com/example/ui/Screens.kt",
-    "sidox/backups/backup_20260721_184018/backup_before_indrive/java/com/example/ui/RealMap.kt",
-    "sidox/backups/backup_20260721_184018/backup_before_indrive/java/com/example/ui/LocationHelper.kt",
-    "sidox/backups/backup_20260721_184018/backup_before_indrive/java/com/example/data/OranRideRepository.kt",
-    "sidox/backups/backup_20260721_184018/backup_before_indrive/java/com/example/data/OranRideDatabase.kt",
-    "sidox/backups/backup_20260721_184018/backup_before_indrive/java/com/example/data/PlaceSearch.kt",
-    "sidox/backups/backup_20260721_184018/backup_before_indrive/java/com/example/data/RetrofitClient.kt",
-    "sidox/backups/backup_20260721_184018/backup_before_indrive/java/com/example/data/LocalPlaces.kt",
-    "sidox/backups/backup_20260721_184018/backup_before_indrive/java/com/example/data/RouteService.kt",
-    "sidox/backups/backup_20260721_184018/backup_before_indrive/java/com/example/data/Driver.kt",
-    "sidox/backups/backup_20260721_184018/backup_before_indrive/java/com/example/data/Passenger.kt",
-    "sidox/backups/backup_20260721_184018/backup_before_indrive/java/com/example/data/Ride.kt",
-    "sidox/backups/backup_20260721_184018/backup_before_indrive/java/com/example/ui/theme/Color.kt",
-    "sidox/backups/backup_20260721_184018/backup_before_indrive/java/com/example/ui/theme/Theme.kt",
-    "sidox/backups/backup_20260721_184018/backup_before_indrive/java/com/example/ui/theme/Type.kt",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/packaged_manifests/debug/processDebugManifestForPackage/AndroidManifest.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/merged_manifests/debug/processDebugManifest/AndroidManifest.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/packaged_res/debug/packageDebugResources/values/values.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/mergeDebugShaders/merger.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/mergeDebugAssets/merger.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merger.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/packageDebugResources/merger.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir/values/values.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values/values.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hi/values-hi.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pt/values-pt.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-watch-v21/values-watch-v21.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-watch-v20/values-watch-v20.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hr/values-hr.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hu/values-hu.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hy/values-hy.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v18/values-v18.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v17/values-v17.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-af/values-af.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-in/values-in.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zh-rHK/values-zh-rHK.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-is/values-is.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-it/values-it.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-am/values-am.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-iw/values-iw.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-b+sr+Latn/values-b+sr+Latn.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ar/values-ar.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-as/values-as.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v21/values-v21.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-es-rUS/values-es-rUS.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ja/values-ja.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v22/values-v22.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v25/values-v25.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-az/values-az.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pt-rPT/values-pt-rPT.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zu/values-zu.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v26/values-v26.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ro/values-ro.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v28/values-v28.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-be/values-be.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ru/values-ru.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-bg/values-bg.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-bn/values-bn.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rCA/values-en-rCA.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-bs/values-bs.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v30/values-v30.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ka/values-ka.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-si/values-si.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sk/values-sk.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sl/values-sl.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sq/values-sq.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ca/values-ca.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sr/values-sr.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-kk/values-kk.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-km/values-km.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-kn/values-kn.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sv/values-sv.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ko/values-ko.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sw/values-sw.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ta/values-ta.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ky/values-ky.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pt-rBR/values-pt-rBR.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-cs/values-cs.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-te/values-te.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-th/values-th.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-tl/values-tl.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-xlarge-v4/values-xlarge-v4.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-da/values-da.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-tr/values-tr.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rAU/values-en-rAU.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-de/values-de.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-lo/values-lo.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-lt/values-lt.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-lv/values-lv.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rIN/values-en-rIN.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-uk/values-uk.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ur/values-ur.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-mk/values-mk.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ml/values-ml.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-mn/values-mn.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-uz/values-uz.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fr-rCA/values-fr-rCA.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-mr/values-mr.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ms/values-ms.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-el/values-el.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zh-rTW/values-zh-rTW.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-my/values-my.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-es/values-es.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-et/values-et.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-eu/values-eu.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-vi/values-vi.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-nb/values-nb.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-port/values-port.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ne/values-ne.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fa/values-fa.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-nl/values-nl.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zh-rCN/values-zh-rCN.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fi/values-fi.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rXC/values-en-rXC.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fr/values-fr.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-large-v4/values-large-v4.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rGB/values-en-rGB.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-land/values-land.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-or/values-or.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-gl/values-gl.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-gu/values-gu.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pa/values-pa.xml",
-    "sidox/backups/backup_20260721_184018/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pl/values-pl.xml",
-    "sidox/backups/backup_20260721_184018/app/src/main/AndroidManifest.xml",
-    "sidox/backups/backup_20260721_184018/app/src/main/res/values/styles.xml",
-    "sidox/backups/backup_20260721_184018/app/src/main/java/com/oranride/app/MainActivity.kt",
-    "sidox/backups/backup_20260721_184018/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
-    "sidox/backups/backup_20260721_184018/app/src/main/java/com/oranride/app/SearchBar.kt",
-    "sidox/backups/backup_20260721_184018/app/src/main/java/com/oranride/app/NominatimApi.kt",
-    "sidox/backups/backup_20260721_184018/app/src/main/java/com/oranride/app/NominatimClient.kt",
-    "sidox/backups/backup_20260721_184018/app/src/main/java/com/oranride/app/NominatimRepository.kt",
-    "sidox/backups/backup_20260721_184018/app/src/main/java/com/oranride/app/LocationState.kt",
-    "sidox/backups/backup_20260721_184018/app/src/main/java/com/oranride/app/LocationManager.kt",
-    "sidox/backups/backup_20260721_184018/app/src/main/java/com/oranride/app/debug/UIState.kt",
-    "tools/agent/current_source.kt",
-    "backup_before_indrive/java/com/example/MainActivity.kt",
-    "backup_before_indrive/java/com/example/ui/OranMap.kt",
-    "backup_before_indrive/java/com/example/ui/OranRideViewModel.kt",
-    "backup_before_indrive/java/com/example/ui/Screens.kt",
-    "backup_before_indrive/java/com/example/ui/RealMap.kt",
-    "backup_before_indrive/java/com/example/ui/LocationHelper.kt",
-    "backup_before_indrive/java/com/example/data/OranRideRepository.kt",
-    "backup_before_indrive/java/com/example/data/OranRideDatabase.kt",
-    "backup_before_indrive/java/com/example/data/PlaceSearch.kt",
-    "backup_before_indrive/java/com/example/data/RetrofitClient.kt",
-    "backup_before_indrive/java/com/example/data/LocalPlaces.kt",
-    "backup_before_indrive/java/com/example/data/RouteService.kt",
-    "backup_before_indrive/java/com/example/data/Driver.kt",
-    "backup_before_indrive/java/com/example/data/Passenger.kt",
-    "backup_before_indrive/java/com/example/data/Ride.kt",
-    "backup_before_indrive/java/com/example/ui/theme/Color.kt",
-    "backup_before_indrive/java/com/example/ui/theme/Theme.kt",
-    "backup_before_indrive/java/com/example/ui/theme/Type.kt",
-    "app/build/intermediates/packaged_manifests/debug/processDebugManifestForPackage/AndroidManifest.xml",
-    "app/build/intermediates/merged_manifests/debug/processDebugManifest/AndroidManifest.xml",
-    "app/build/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml",
-    "app/build/intermediates/packaged_res/debug/packageDebugResources/values/values.xml",
-    "app/build/intermediates/incremental/mergeDebugShaders/merger.xml",
-    "app/build/intermediates/incremental/mergeDebugAssets/merger.xml",
-    "app/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merger.xml",
-    "app/build/intermediates/incremental/debug/packageDebugResources/merger.xml",
-    "app/build/intermediates/incremental/debug/packageDebugResources/merged.dir/values/values.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values/values.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hi/values-hi.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pt/values-pt.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-watch-v21/values-watch-v21.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-watch-v20/values-watch-v20.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hr/values-hr.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hu/values-hu.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hy/values-hy.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v18/values-v18.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v17/values-v17.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-af/values-af.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-in/values-in.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zh-rHK/values-zh-rHK.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-is/values-is.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-it/values-it.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-am/values-am.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-iw/values-iw.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-b+sr+Latn/values-b+sr+Latn.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ar/values-ar.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-as/values-as.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v21/values-v21.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-es-rUS/values-es-rUS.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ja/values-ja.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v22/values-v22.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v25/values-v25.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-az/values-az.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pt-rPT/values-pt-rPT.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zu/values-zu.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v26/values-v26.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ro/values-ro.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v28/values-v28.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-be/values-be.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ru/values-ru.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-bg/values-bg.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-bn/values-bn.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rCA/values-en-rCA.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-bs/values-bs.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v30/values-v30.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ka/values-ka.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-si/values-si.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sk/values-sk.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sl/values-sl.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sq/values-sq.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ca/values-ca.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sr/values-sr.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-kk/values-kk.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-km/values-km.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-kn/values-kn.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sv/values-sv.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ko/values-ko.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sw/values-sw.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ta/values-ta.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ky/values-ky.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pt-rBR/values-pt-rBR.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-cs/values-cs.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-te/values-te.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-th/values-th.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-tl/values-tl.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-xlarge-v4/values-xlarge-v4.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-da/values-da.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-tr/values-tr.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rAU/values-en-rAU.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-de/values-de.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-lo/values-lo.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-lt/values-lt.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-lv/values-lv.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rIN/values-en-rIN.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-uk/values-uk.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ur/values-ur.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-mk/values-mk.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ml/values-ml.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-mn/values-mn.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-uz/values-uz.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fr-rCA/values-fr-rCA.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-mr/values-mr.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ms/values-ms.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-el/values-el.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zh-rTW/values-zh-rTW.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-my/values-my.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-es/values-es.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-et/values-et.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-eu/values-eu.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-vi/values-vi.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-nb/values-nb.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-port/values-port.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ne/values-ne.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fa/values-fa.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-nl/values-nl.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zh-rCN/values-zh-rCN.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fi/values-fi.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rXC/values-en-rXC.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fr/values-fr.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-large-v4/values-large-v4.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rGB/values-en-rGB.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-land/values-land.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-or/values-or.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-gl/values-gl.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-gu/values-gu.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pa/values-pa.xml",
-    "app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pl/values-pl.xml",
-    "app/src/main/AndroidManifest.xml",
-    "app/src/main/res/values/styles.xml",
-    "app/src/main/java/com/oranride/app/MainActivity.kt",
-    "app/src/main/java/com/oranride/app/PlacesDatabase.kt",
-    "app/src/main/java/com/oranride/app/SearchBar.kt",
-    "app/src/main/java/com/oranride/app/NominatimApi.kt",
-    "app/src/main/java/com/oranride/app/NominatimClient.kt",
-    "app/src/main/java/com/oranride/app/NominatimRepository.kt",
-    "app/src/main/java/com/oranride/app/LocationState.kt",
-    "app/src/main/java/com/oranride/app/LocationManager.kt",
-    "app/src/main/java/com/oranride/app/Driver.kt",
-    "app/src/main/java/com/oranride/app/DriverRepository.kt",
-    "app/src/main/java/com/oranride/app/DriverViewModel.kt",
-    "app/src/main/java/com/oranride/app/RideRequest.kt",
-    "app/src/main/java/com/oranride/app/RideRepository.kt",
-    "app/src/main/java/com/oranride/app/RideViewModel.kt",
-    "app/src/main/java/com/oranride/app/debug/UIState.kt"
+  "project": "oran-ride",
+  "kotlin_analysis": [
+    {
+      "file": "backup_RealMap_210349.kt",
+      "size": 2611,
+      "classes": 0,
+      "functions": 1,
+      "composables": 1
+    },
+    {
+      "file": "backup_RealMap_210619.kt",
+      "size": 2519,
+      "classes": 0,
+      "functions": 1,
+      "composables": 1
+    },
+    {
+      "file": "backup_map_223834.kt",
+      "size": 15709,
+      "classes": 1,
+      "functions": 3,
+      "composables": 1
+    },
+    {
+      "file": "backup_real_224348.kt",
+      "size": 15813,
+      "classes": 1,
+      "functions": 3,
+      "composables": 1
+    },
+    {
+      "file": "backup_real_224531.kt",
+      "size": 15813,
+      "classes": 1,
+      "functions": 3,
+      "composables": 1
+    },
+    {
+      "file": "backup_real_224604.kt",
+      "size": 15956,
+      "classes": 1,
+      "functions": 3,
+      "composables": 1
+    },
+    {
+      "file": "backup_20260719_210117/RealMap.kt",
+      "size": 2519,
+      "classes": 0,
+      "functions": 1,
+      "composables": 1
+    },
+    {
+      "file": "backup_20260719_210117/Screens.kt",
+      "size": 56866,
+      "classes": 0,
+      "functions": 10,
+      "composables": 10
+    },
+    {
+      "file": "backup_20260719_210117/OranRideViewModel.kt",
+      "size": 17370,
+      "classes": 1,
+      "functions": 23,
+      "composables": 0
+    },
+    {
+      "file": "backup_20260719_210117/OranMap.kt",
+      "size": 15709,
+      "classes": 1,
+      "functions": 3,
+      "composables": 1
+    },
+    {
+      "file": "backup_20260719_210117/RetrofitClient.kt",
+      "size": 1135,
+      "classes": 0,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "backup_20260719_210117/PlaceSearch.kt",
+      "size": 442,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "backup_223708/OranMap.kt",
+      "size": 15709,
+      "classes": 1,
+      "functions": 3,
+      "composables": 1
+    },
+    {
+      "file": "backup_223923/OranMap.kt",
+      "size": 15805,
+      "classes": 1,
+      "functions": 3,
+      "composables": 1
+    },
+    {
+      "file": "backup_224215/OranMap.kt",
+      "size": 15805,
+      "classes": 1,
+      "functions": 3,
+      "composables": 1
+    },
+    {
+      "file": "backup_225232/OranMap.kt",
+      "size": 16099,
+      "classes": 1,
+      "functions": 3,
+      "composables": 1
+    },
+    {
+      "file": "backup_ai_20260719_234416/MainActivity.kt",
+      "size": 1015,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "backup_ai_20260719_234416/OranMap.kt",
+      "size": 16099,
+      "classes": 1,
+      "functions": 3,
+      "composables": 1
+    },
+    {
+      "file": "backup_ai_20260719_234416/OranRideViewModel.kt",
+      "size": 17458,
+      "classes": 1,
+      "functions": 23,
+      "composables": 0
+    },
+    {
+      "file": "backup_ai_20260719_234416/Screens.kt",
+      "size": 56866,
+      "classes": 0,
+      "functions": 10,
+      "composables": 10
+    },
+    {
+      "file": "backup_ai_20260719_234416/RealMap.kt",
+      "size": 2846,
+      "classes": 0,
+      "functions": 1,
+      "composables": 1
+    },
+    {
+      "file": "backup_ai_20260719_234416/LocationHelper.kt",
+      "size": 1041,
+      "classes": 1,
+      "functions": 2,
+      "composables": 0
+    },
+    {
+      "file": "backup_ai_20260719_234416/Color.kt",
+      "size": 754,
+      "classes": 0,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "backup_ai_20260719_234416/Theme.kt",
+      "size": 1865,
+      "classes": 0,
+      "functions": 1,
+      "composables": 2
+    },
+    {
+      "file": "backup_ai_20260719_234416/Type.kt",
+      "size": 994,
+      "classes": 0,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "backup_ai_20260719_234416/OranRideRepository.kt",
+      "size": 13796,
+      "classes": 1,
+      "functions": 13,
+      "composables": 0
+    },
+    {
+      "file": "backup_ai_20260719_234416/OranRideDatabase.kt",
+      "size": 2784,
+      "classes": 3,
+      "functions": 15,
+      "composables": 0
+    },
+    {
+      "file": "backup_ai_20260719_234416/PlaceSearch.kt",
+      "size": 442,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "backup_ai_20260719_234416/RetrofitClient.kt",
+      "size": 1135,
+      "classes": 0,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "backup_ai_20260719_234416/LocalPlaces.kt",
+      "size": 708,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "backup_ai_20260719_234416/RouteService.kt",
+      "size": 432,
+      "classes": 3,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "backup_ai_20260719_234614/MainActivity.kt",
+      "size": 1015,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "backup_ai_20260719_234614/OranMap.kt",
+      "size": 16099,
+      "classes": 1,
+      "functions": 3,
+      "composables": 1
+    },
+    {
+      "file": "backup_ai_20260719_234614/OranRideViewModel.kt",
+      "size": 17458,
+      "classes": 1,
+      "functions": 23,
+      "composables": 0
+    },
+    {
+      "file": "backup_ai_20260719_234614/Screens.kt",
+      "size": 56866,
+      "classes": 0,
+      "functions": 10,
+      "composables": 10
+    },
+    {
+      "file": "backup_ai_20260719_234614/RealMap.kt",
+      "size": 2846,
+      "classes": 0,
+      "functions": 1,
+      "composables": 1
+    },
+    {
+      "file": "backup_ai_20260719_234614/LocationHelper.kt",
+      "size": 1041,
+      "classes": 1,
+      "functions": 2,
+      "composables": 0
+    },
+    {
+      "file": "backup_ai_20260719_234614/Color.kt",
+      "size": 754,
+      "classes": 0,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "backup_ai_20260719_234614/Theme.kt",
+      "size": 1865,
+      "classes": 0,
+      "functions": 1,
+      "composables": 2
+    },
+    {
+      "file": "backup_ai_20260719_234614/Type.kt",
+      "size": 994,
+      "classes": 0,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "backup_ai_20260719_234614/OranRideRepository.kt",
+      "size": 13796,
+      "classes": 1,
+      "functions": 13,
+      "composables": 0
+    },
+    {
+      "file": "backup_ai_20260719_234614/OranRideDatabase.kt",
+      "size": 2784,
+      "classes": 3,
+      "functions": 15,
+      "composables": 0
+    },
+    {
+      "file": "backup_ai_20260719_234614/PlaceSearch.kt",
+      "size": 442,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "backup_ai_20260719_234614/RetrofitClient.kt",
+      "size": 1135,
+      "classes": 0,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "backup_ai_20260719_234614/LocalPlaces.kt",
+      "size": 708,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "backup_ai_20260719_234614/RouteService.kt",
+      "size": 432,
+      "classes": 3,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "backup_234751/MainActivity.kt",
+      "size": 1015,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "backup_234751/OranMap.kt",
+      "size": 16099,
+      "classes": 1,
+      "functions": 3,
+      "composables": 1
+    },
+    {
+      "file": "backup_234751/OranRideViewModel.kt",
+      "size": 17458,
+      "classes": 1,
+      "functions": 23,
+      "composables": 0
+    },
+    {
+      "file": "backup_234751/Screens.kt",
+      "size": 56866,
+      "classes": 0,
+      "functions": 10,
+      "composables": 10
+    },
+    {
+      "file": "backup_234751/RealMap.kt",
+      "size": 2846,
+      "classes": 0,
+      "functions": 1,
+      "composables": 1
+    },
+    {
+      "file": "backup_234751/LocationHelper.kt",
+      "size": 1041,
+      "classes": 1,
+      "functions": 2,
+      "composables": 0
+    },
+    {
+      "file": "backup_234751/Color.kt",
+      "size": 754,
+      "classes": 0,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "backup_234751/Theme.kt",
+      "size": 1865,
+      "classes": 0,
+      "functions": 1,
+      "composables": 2
+    },
+    {
+      "file": "backup_234751/Type.kt",
+      "size": 994,
+      "classes": 0,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "backup_234751/OranRideRepository.kt",
+      "size": 13796,
+      "classes": 1,
+      "functions": 13,
+      "composables": 0
+    },
+    {
+      "file": "backup_234751/OranRideDatabase.kt",
+      "size": 2784,
+      "classes": 3,
+      "functions": 15,
+      "composables": 0
+    },
+    {
+      "file": "backup_234751/PlaceSearch.kt",
+      "size": 442,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "backup_234751/RetrofitClient.kt",
+      "size": 1135,
+      "classes": 0,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "backup_234751/LocalPlaces.kt",
+      "size": 708,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "backup_234751/RouteService.kt",
+      "size": 432,
+      "classes": 3,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "backup_234911/MainActivity.kt",
+      "size": 1015,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "backup_234911/OranMap.kt",
+      "size": 16099,
+      "classes": 1,
+      "functions": 3,
+      "composables": 1
+    },
+    {
+      "file": "backup_234911/OranRideViewModel.kt",
+      "size": 17458,
+      "classes": 1,
+      "functions": 23,
+      "composables": 0
+    },
+    {
+      "file": "backup_234911/Screens.kt",
+      "size": 56866,
+      "classes": 0,
+      "functions": 10,
+      "composables": 10
+    },
+    {
+      "file": "backup_234911/RealMap.kt",
+      "size": 2846,
+      "classes": 0,
+      "functions": 1,
+      "composables": 1
+    },
+    {
+      "file": "backup_234911/LocationHelper.kt",
+      "size": 1041,
+      "classes": 1,
+      "functions": 2,
+      "composables": 0
+    },
+    {
+      "file": "backup_234911/Color.kt",
+      "size": 754,
+      "classes": 0,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "backup_234911/Theme.kt",
+      "size": 1865,
+      "classes": 0,
+      "functions": 1,
+      "composables": 2
+    },
+    {
+      "file": "backup_234911/Type.kt",
+      "size": 994,
+      "classes": 0,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "backup_234911/OranRideRepository.kt",
+      "size": 13796,
+      "classes": 1,
+      "functions": 13,
+      "composables": 0
+    },
+    {
+      "file": "backup_234911/OranRideDatabase.kt",
+      "size": 2784,
+      "classes": 3,
+      "functions": 15,
+      "composables": 0
+    },
+    {
+      "file": "backup_234911/PlaceSearch.kt",
+      "size": 442,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "backup_234911/RetrofitClient.kt",
+      "size": 1135,
+      "classes": 0,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "backup_234911/LocalPlaces.kt",
+      "size": 708,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "backup_234911/RouteService.kt",
+      "size": 432,
+      "classes": 3,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "backup_234911/Driver.kt",
+      "size": 76,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "backup_234911/Passenger.kt",
+      "size": 79,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "backup_234911/Ride.kt",
+      "size": 79,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "backup_before_indrive/Screens.kt",
+      "size": 56866,
+      "classes": 0,
+      "functions": 10,
+      "composables": 10
+    },
+    {
+      "file": "backup_nominatim/NominatimApi.kt",
+      "size": 849,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "backup_nominatim/NominatimRepository.kt",
+      "size": 849,
+      "classes": 0,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "sidox_live_backup/backup_RealMap_210349.kt",
+      "size": 2519,
+      "classes": 0,
+      "functions": 1,
+      "composables": 1
+    },
+    {
+      "file": "java/com/oranride/app/MainActivity.kt",
+      "size": 9376,
+      "classes": 1,
+      "functions": 10,
+      "composables": 7
+    },
+    {
+      "file": "java/com/oranride/app/PlacesDatabase.kt",
+      "size": 1044,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "java/com/oranride/app/SearchBar.kt",
+      "size": 3359,
+      "classes": 0,
+      "functions": 1,
+      "composables": 1
+    },
+    {
+      "file": "java/com/oranride/app/NominatimApi.kt",
+      "size": 1048,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "java/com/oranride/app/NominatimClient.kt",
+      "size": 551,
+      "classes": 0,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "java/com/oranride/app/NominatimRepository.kt",
+      "size": 1486,
+      "classes": 0,
+      "functions": 2,
+      "composables": 0
+    },
+    {
+      "file": "java/com/oranride/app/LocationState.kt",
+      "size": 168,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "java/com/oranride/app/LocationManager.kt",
+      "size": 736,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "java/com/oranride/app/Driver.kt",
+      "size": 217,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "java/com/oranride/app/DriverRepository.kt",
+      "size": 798,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "java/com/oranride/app/DriverViewModel.kt",
+      "size": 1085,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "java/com/oranride/app/RideRequest.kt",
+      "size": 371,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "java/com/oranride/app/RideRepository.kt",
+      "size": 843,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "java/com/oranride/app/RideViewModel.kt",
+      "size": 1195,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "java/com/oranride/app/debug/UIState.kt",
+      "size": 335,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_202042/tools/agent/current_source.kt",
+      "size": 1015,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_202042/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+      "size": 1044,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_202042/app/src/main/java/com/oranride/app/NominatimRepository.kt",
+      "size": 1486,
+      "classes": 0,
+      "functions": 2,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_202042/app/src/main/java/com/oranride/app/MainActivity.kt",
+      "size": 9208,
+      "classes": 1,
+      "functions": 10,
+      "composables": 7
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_202042/app/src/main/java/com/oranride/app/Driver.kt",
+      "size": 202,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_202042/app/src/main/java/com/oranride/app/DriverRepository.kt",
+      "size": 783,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_202042/app/src/main/java/com/oranride/app/DriverViewModel.kt",
+      "size": 1070,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_201944/tools/agent/current_source.kt",
+      "size": 1015,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_201944/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+      "size": 1044,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_201944/app/src/main/java/com/oranride/app/NominatimRepository.kt",
+      "size": 1486,
+      "classes": 0,
+      "functions": 2,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_201944/app/src/main/java/com/oranride/app/MainActivity.kt",
+      "size": 8982,
+      "classes": 1,
+      "functions": 10,
+      "composables": 7
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_201944/app/src/main/java/com/oranride/app/Driver.kt",
+      "size": 202,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_201944/app/src/main/java/com/oranride/app/DriverRepository.kt",
+      "size": 783,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_201944/app/src/main/java/com/oranride/app/DriverViewModel.kt",
+      "size": 1070,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200714/tools/agent/current_source.kt",
+      "size": 1015,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200714/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+      "size": 1044,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200714/app/src/main/java/com/oranride/app/NominatimRepository.kt",
+      "size": 1486,
+      "classes": 0,
+      "functions": 2,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200714/app/src/main/java/com/oranride/app/MainActivity.kt",
+      "size": 8982,
+      "classes": 1,
+      "functions": 10,
+      "composables": 7
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200714/app/src/main/java/com/oranride/app/Driver.kt",
+      "size": 202,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200714/app/src/main/java/com/oranride/app/DriverRepository.kt",
+      "size": 783,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200714/app/src/main/java/com/oranride/app/DriverViewModel.kt",
+      "size": 1070,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200606/tools/agent/current_source.kt",
+      "size": 1015,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200606/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+      "size": 1044,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200606/app/src/main/java/com/oranride/app/NominatimRepository.kt",
+      "size": 1486,
+      "classes": 0,
+      "functions": 2,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200606/app/src/main/java/com/oranride/app/MainActivity.kt",
+      "size": 8805,
+      "classes": 1,
+      "functions": 10,
+      "composables": 7
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200606/app/src/main/java/com/oranride/app/Driver.kt",
+      "size": 202,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200606/app/src/main/java/com/oranride/app/DriverRepository.kt",
+      "size": 783,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200606/app/src/main/java/com/oranride/app/DriverViewModel.kt",
+      "size": 1070,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200423/tools/agent/current_source.kt",
+      "size": 1015,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200423/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+      "size": 1044,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200423/app/src/main/java/com/oranride/app/NominatimRepository.kt",
+      "size": 1486,
+      "classes": 0,
+      "functions": 2,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200423/app/src/main/java/com/oranride/app/MainActivity.kt",
+      "size": 8661,
+      "classes": 1,
+      "functions": 10,
+      "composables": 7
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200423/app/src/main/java/com/oranride/app/Driver.kt",
+      "size": 202,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200423/app/src/main/java/com/oranride/app/DriverRepository.kt",
+      "size": 783,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200423/app/src/main/java/com/oranride/app/DriverViewModel.kt",
+      "size": 1070,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200407/tools/agent/current_source.kt",
+      "size": 1015,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200407/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+      "size": 1044,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200407/app/src/main/java/com/oranride/app/NominatimRepository.kt",
+      "size": 1486,
+      "classes": 0,
+      "functions": 2,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200407/app/src/main/java/com/oranride/app/MainActivity.kt",
+      "size": 8661,
+      "classes": 1,
+      "functions": 10,
+      "composables": 7
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200407/app/src/main/java/com/oranride/app/Driver.kt",
+      "size": 202,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200407/app/src/main/java/com/oranride/app/DriverRepository.kt",
+      "size": 783,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200407/app/src/main/java/com/oranride/app/DriverViewModel.kt",
+      "size": 1070,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200301/tools/agent/current_source.kt",
+      "size": 1015,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200301/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+      "size": 1044,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200301/app/src/main/java/com/oranride/app/NominatimRepository.kt",
+      "size": 1486,
+      "classes": 0,
+      "functions": 2,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200301/app/src/main/java/com/oranride/app/MainActivity.kt",
+      "size": 8490,
+      "classes": 1,
+      "functions": 10,
+      "composables": 7
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200301/app/src/main/java/com/oranride/app/Driver.kt",
+      "size": 202,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200301/app/src/main/java/com/oranride/app/DriverRepository.kt",
+      "size": 783,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200301/app/src/main/java/com/oranride/app/DriverViewModel.kt",
+      "size": 1070,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200202/tools/agent/current_source.kt",
+      "size": 1015,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200202/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+      "size": 1044,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200202/app/src/main/java/com/oranride/app/NominatimRepository.kt",
+      "size": 1486,
+      "classes": 0,
+      "functions": 2,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200202/app/src/main/java/com/oranride/app/MainActivity.kt",
+      "size": 8490,
+      "classes": 1,
+      "functions": 10,
+      "composables": 7
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200202/app/src/main/java/com/oranride/app/Driver.kt",
+      "size": 202,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200202/app/src/main/java/com/oranride/app/DriverRepository.kt",
+      "size": 783,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200202/app/src/main/java/com/oranride/app/DriverViewModel.kt",
+      "size": 1070,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200108/tools/agent/current_source.kt",
+      "size": 1015,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200108/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+      "size": 1044,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200108/app/src/main/java/com/oranride/app/NominatimRepository.kt",
+      "size": 1486,
+      "classes": 0,
+      "functions": 2,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200108/app/src/main/java/com/oranride/app/MainActivity.kt",
+      "size": 8018,
+      "classes": 1,
+      "functions": 10,
+      "composables": 7
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200108/app/src/main/java/com/oranride/app/Driver.kt",
+      "size": 202,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200108/app/src/main/java/com/oranride/app/DriverRepository.kt",
+      "size": 783,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_200108/app/src/main/java/com/oranride/app/DriverViewModel.kt",
+      "size": 1070,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195859/tools/agent/current_source.kt",
+      "size": 1015,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195859/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+      "size": 1044,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195859/app/src/main/java/com/oranride/app/NominatimRepository.kt",
+      "size": 1486,
+      "classes": 0,
+      "functions": 2,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195859/app/src/main/java/com/oranride/app/MainActivity.kt",
+      "size": 7855,
+      "classes": 1,
+      "functions": 10,
+      "composables": 7
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195859/app/src/main/java/com/oranride/app/Driver.kt",
+      "size": 202,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195859/app/src/main/java/com/oranride/app/DriverRepository.kt",
+      "size": 783,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195859/app/src/main/java/com/oranride/app/DriverViewModel.kt",
+      "size": 1070,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195811/tools/agent/current_source.kt",
+      "size": 1015,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195811/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+      "size": 1044,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195811/app/src/main/java/com/oranride/app/NominatimRepository.kt",
+      "size": 1486,
+      "classes": 0,
+      "functions": 2,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195811/app/src/main/java/com/oranride/app/MainActivity.kt",
+      "size": 7855,
+      "classes": 1,
+      "functions": 10,
+      "composables": 7
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195811/app/src/main/java/com/oranride/app/Driver.kt",
+      "size": 202,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195811/app/src/main/java/com/oranride/app/DriverRepository.kt",
+      "size": 783,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195811/app/src/main/java/com/oranride/app/DriverViewModel.kt",
+      "size": 1070,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195732/tools/agent/current_source.kt",
+      "size": 1015,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195732/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+      "size": 1044,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195732/app/src/main/java/com/oranride/app/NominatimRepository.kt",
+      "size": 1486,
+      "classes": 0,
+      "functions": 2,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195732/app/src/main/java/com/oranride/app/MainActivity.kt",
+      "size": 7441,
+      "classes": 1,
+      "functions": 10,
+      "composables": 7
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195732/app/src/main/java/com/oranride/app/Driver.kt",
+      "size": 202,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195732/app/src/main/java/com/oranride/app/DriverRepository.kt",
+      "size": 783,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195732/app/src/main/java/com/oranride/app/DriverViewModel.kt",
+      "size": 1070,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195533/tools/agent/current_source.kt",
+      "size": 1015,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195533/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+      "size": 1044,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195533/app/src/main/java/com/oranride/app/NominatimRepository.kt",
+      "size": 1486,
+      "classes": 0,
+      "functions": 2,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195533/app/src/main/java/com/oranride/app/MainActivity.kt",
+      "size": 7235,
+      "classes": 1,
+      "functions": 10,
+      "composables": 7
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195533/app/src/main/java/com/oranride/app/Driver.kt",
+      "size": 202,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195533/app/src/main/java/com/oranride/app/DriverRepository.kt",
+      "size": 562,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195533/app/src/main/java/com/oranride/app/DriverViewModel.kt",
+      "size": 1070,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195447/tools/agent/current_source.kt",
+      "size": 1015,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195447/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+      "size": 1044,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195447/app/src/main/java/com/oranride/app/NominatimRepository.kt",
+      "size": 1486,
+      "classes": 0,
+      "functions": 2,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195447/app/src/main/java/com/oranride/app/MainActivity.kt",
+      "size": 7042,
+      "classes": 1,
+      "functions": 10,
+      "composables": 7
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195447/app/src/main/java/com/oranride/app/Driver.kt",
+      "size": 202,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195447/app/src/main/java/com/oranride/app/DriverRepository.kt",
+      "size": 562,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_195447/app/src/main/java/com/oranride/app/DriverViewModel.kt",
+      "size": 1070,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_194503/tools/agent/current_source.kt",
+      "size": 1015,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_194503/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+      "size": 1044,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_194503/app/src/main/java/com/oranride/app/NominatimRepository.kt",
+      "size": 1486,
+      "classes": 0,
+      "functions": 2,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_194503/app/src/main/java/com/oranride/app/MainActivity.kt",
+      "size": 6558,
+      "classes": 1,
+      "functions": 9,
+      "composables": 6
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_194503/app/src/main/java/com/oranride/app/Driver.kt",
+      "size": 202,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_194503/app/src/main/java/com/oranride/app/DriverRepository.kt",
+      "size": 562,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_194503/app/src/main/java/com/oranride/app/DriverViewModel.kt",
+      "size": 1070,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_193300/tools/agent/current_source.kt",
+      "size": 1015,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_193300/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+      "size": 1044,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_193300/app/src/main/java/com/oranride/app/NominatimRepository.kt",
+      "size": 1486,
+      "classes": 0,
+      "functions": 2,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_193300/app/src/main/java/com/oranride/app/MainActivity.kt",
+      "size": 6558,
+      "classes": 1,
+      "functions": 9,
+      "composables": 6
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_193300/app/src/main/java/com/oranride/app/Driver.kt",
+      "size": 22,
+      "classes": 0,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_193300/app/src/main/java/com/oranride/app/DriverRepository.kt",
+      "size": 22,
+      "classes": 0,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_193300/app/src/main/java/com/oranride/app/DriverViewModel.kt",
+      "size": 22,
+      "classes": 0,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_191919/tools/agent/current_source.kt",
+      "size": 1015,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_191919/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+      "size": 1044,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_191919/app/src/main/java/com/oranride/app/NominatimRepository.kt",
+      "size": 1486,
+      "classes": 0,
+      "functions": 2,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_191919/app/src/main/java/com/oranride/app/MainActivity.kt",
+      "size": 6558,
+      "classes": 1,
+      "functions": 9,
+      "composables": 6
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_191919/app/src/main/java/com/oranride/app/Driver.kt",
+      "size": 22,
+      "classes": 0,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_191919/app/src/main/java/com/oranride/app/DriverRepository.kt",
+      "size": 22,
+      "classes": 0,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/snapshots/snapshot_20260721_191919/app/src/main/java/com/oranride/app/DriverViewModel.kt",
+      "size": 22,
+      "classes": 0,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/patch_backups/backup_20260721_191747/tools/agent/current_source.kt",
+      "size": 1015,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/patch_backups/backup_20260721_191747/app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+      "size": 1044,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/patch_backups/backup_20260721_191747/app/src/main/java/com/oranride/app/NominatimRepository.kt",
+      "size": 1486,
+      "classes": 0,
+      "functions": 2,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/patch_backups/backup_20260721_191747/app/src/main/java/com/oranride/app/MainActivity.kt",
+      "size": 6558,
+      "classes": 1,
+      "functions": 9,
+      "composables": 6
+    },
+    {
+      "file": "sidox/tasks/patch_backups/backup_20260721_191747/app/src/main/java/com/oranride/app/Driver.kt",
+      "size": 22,
+      "classes": 0,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/patch_backups/backup_20260721_191747/app/src/main/java/com/oranride/app/DriverRepository.kt",
+      "size": 22,
+      "classes": 0,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "sidox/tasks/patch_backups/backup_20260721_191747/app/src/main/java/com/oranride/app/DriverViewModel.kt",
+      "size": 22,
+      "classes": 0,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "tools/agent/current_source.kt",
+      "size": 1015,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "backup_before_indrive/java/com/example/MainActivity.kt",
+      "size": 1015,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "backup_before_indrive/java/com/example/ui/OranMap.kt",
+      "size": 16099,
+      "classes": 1,
+      "functions": 3,
+      "composables": 1
+    },
+    {
+      "file": "backup_before_indrive/java/com/example/ui/OranRideViewModel.kt",
+      "size": 17458,
+      "classes": 1,
+      "functions": 23,
+      "composables": 0
+    },
+    {
+      "file": "backup_before_indrive/java/com/example/ui/Screens.kt",
+      "size": 56866,
+      "classes": 0,
+      "functions": 10,
+      "composables": 10
+    },
+    {
+      "file": "backup_before_indrive/java/com/example/ui/RealMap.kt",
+      "size": 2846,
+      "classes": 0,
+      "functions": 1,
+      "composables": 1
+    },
+    {
+      "file": "backup_before_indrive/java/com/example/ui/LocationHelper.kt",
+      "size": 1041,
+      "classes": 1,
+      "functions": 2,
+      "composables": 0
+    },
+    {
+      "file": "backup_before_indrive/java/com/example/data/OranRideRepository.kt",
+      "size": 13796,
+      "classes": 1,
+      "functions": 13,
+      "composables": 0
+    },
+    {
+      "file": "backup_before_indrive/java/com/example/data/OranRideDatabase.kt",
+      "size": 2784,
+      "classes": 3,
+      "functions": 15,
+      "composables": 0
+    },
+    {
+      "file": "backup_before_indrive/java/com/example/data/PlaceSearch.kt",
+      "size": 442,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "backup_before_indrive/java/com/example/data/RetrofitClient.kt",
+      "size": 1135,
+      "classes": 0,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "backup_before_indrive/java/com/example/data/LocalPlaces.kt",
+      "size": 708,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "backup_before_indrive/java/com/example/data/RouteService.kt",
+      "size": 432,
+      "classes": 3,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "backup_before_indrive/java/com/example/data/Driver.kt",
+      "size": 76,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "backup_before_indrive/java/com/example/data/Passenger.kt",
+      "size": 79,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "backup_before_indrive/java/com/example/data/Ride.kt",
+      "size": 79,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "backup_before_indrive/java/com/example/ui/theme/Color.kt",
+      "size": 754,
+      "classes": 0,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "backup_before_indrive/java/com/example/ui/theme/Theme.kt",
+      "size": 1865,
+      "classes": 0,
+      "functions": 1,
+      "composables": 2
+    },
+    {
+      "file": "backup_before_indrive/java/com/example/ui/theme/Type.kt",
+      "size": 994,
+      "classes": 0,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "app/src/main/java/com/oranride/app/MainActivity.kt",
+      "size": 9376,
+      "classes": 1,
+      "functions": 10,
+      "composables": 7
+    },
+    {
+      "file": "app/src/main/java/com/oranride/app/PlacesDatabase.kt",
+      "size": 1044,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "app/src/main/java/com/oranride/app/SearchBar.kt",
+      "size": 3359,
+      "classes": 0,
+      "functions": 1,
+      "composables": 1
+    },
+    {
+      "file": "app/src/main/java/com/oranride/app/NominatimApi.kt",
+      "size": 1048,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "app/src/main/java/com/oranride/app/NominatimClient.kt",
+      "size": 551,
+      "classes": 0,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "app/src/main/java/com/oranride/app/NominatimRepository.kt",
+      "size": 1486,
+      "classes": 0,
+      "functions": 2,
+      "composables": 0
+    },
+    {
+      "file": "app/src/main/java/com/oranride/app/LocationState.kt",
+      "size": 168,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "app/src/main/java/com/oranride/app/LocationManager.kt",
+      "size": 736,
+      "classes": 1,
+      "functions": 1,
+      "composables": 0
+    },
+    {
+      "file": "app/src/main/java/com/oranride/app/Driver.kt",
+      "size": 217,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "app/src/main/java/com/oranride/app/DriverRepository.kt",
+      "size": 798,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "app/src/main/java/com/oranride/app/DriverViewModel.kt",
+      "size": 1085,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "app/src/main/java/com/oranride/app/RideRequest.kt",
+      "size": 371,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    },
+    {
+      "file": "app/src/main/java/com/oranride/app/RideRepository.kt",
+      "size": 843,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "app/src/main/java/com/oranride/app/RideViewModel.kt",
+      "size": 1195,
+      "classes": 1,
+      "functions": 3,
+      "composables": 0
+    },
+    {
+      "file": "app/src/main/java/com/oranride/app/debug/UIState.kt",
+      "size": 335,
+      "classes": 1,
+      "functions": 0,
+      "composables": 0
+    }
   ]
 }

@@ -1,5 +1,12 @@
 {
-  "status": "executed",
-  "time": "2026-07-21T22:42:13.821946",
-  "changes": []
+  "created": "2026-07-22T10:56:08.845328",
+  "status": "proposal",
+  "approved": true,
+  "operations": [
+    {
+      "type": "append",
+      "file": "test_sidox.txt",
+      "content": "Sidox real patch test\n"
+    }
+  ]
 }
