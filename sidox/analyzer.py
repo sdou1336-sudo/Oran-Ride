@@ -1,6 +1,11 @@
 import json
+import os
 
 error_file="sidox/build_error.json"
+
+if not os.path.exists(error_file):
+    print("No build error found")
+    exit(0)
 
 with open(error_file) as f:
     data=json.load(f)
