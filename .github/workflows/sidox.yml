@@ -30,3 +30,18 @@ jobs:
 
       - name: Build Android
         run: ./gradlew assembleDebug
+
+      - name: Read Build Errors
+        if: failure()
+        run: |
+          python3 sidox/error_reader.py
+
+      - name: Generate Fix Patch
+        if: failure()
+        run: |
+          python3 sidox/patch_planner.py
+
+      - name: Retry Build
+        if: failure()
+        run: |
+          ./gradlew assembleDebug
