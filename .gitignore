@@ -9,3 +9,6 @@ build/
 .gradle/
 **/build/
 build/
+sidox/backups/
+sidox_live_backup/
+*.log
