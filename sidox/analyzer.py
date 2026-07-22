@@ -1,43 +1,34 @@
-import os
 import json
-from datetime import datetime
 
-log_file = "build.log"
-report_dir = "sidox/reports"
+error_file="sidox/build_error.json"
 
-os.makedirs(report_dir, exist_ok=True)
+with open(error_file) as f:
+    data=json.load(f)
 
-result = {
-    "time": datetime.now().isoformat(),
-    "status": "UNKNOWN",
-    "problem": "No detected issue",
-    "category": "unknown",
-    "targets": []
+err=data.get("error","")
+
+text=err.lower()
+
+if "aapt2" in text or "aapt2" in text:
+    category="aapt2"
+elif "could not resolve" in text or "could not find" in text or "dependency" in text:
+    category="dependency"
+elif "java heap space" in text or "outofmemory" in text:
+    category="memory"
+elif "unresolved reference" in text or "cannot find symbol" in text:
+    category="kotlin"
+elif "duplicate class" in text:
+    category="conflict"
+else:
+    category="gradle"
+
+report={
+    "status":"FAILED",
+    "problem":err[-1000:],
+    "category":category
 }
 
-if os.path.exists(log_file):
-    log = open(log_file, "r", errors="ignore").read()
+with open("sidox/reports/latest_report.json","w") as f:
+    json.dump(report,f,indent=2)
 
-    checks = [
-        ("OutOfMemoryError", "Java heap space", "memory"),
-        ("Compilation failed", "Compilation error", "kotlin/java"),
-        ("DexArchiveMergerException", "Dex merge error", "android build"),
-        ("BUILD FAILED", "Gradle build failed", "gradle")
-    ]
-
-    for key, problem, category in checks:
-        if key in log:
-            result["status"] = "FAILED"
-            result["problem"] = problem
-            result["category"] = category
-            break
-    else:
-        result["status"] = "SUCCESS"
-
-else:
-    result["status"] = "NO_LOG"
-
-with open(f"{report_dir}/latest_report.json", "w") as f:
-    json.dump(result, f, indent=2)
-
-print(json.dumps(result, indent=2))
+print("Analysis complete:", category)
