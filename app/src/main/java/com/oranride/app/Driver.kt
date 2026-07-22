@@ -1,3 +1,7 @@
+
 package com.oranride.app
 
-// Sidox generated Kotlin code
+data class Driver(
+    val id: String,
+    val name: String
+)

@@ -1,3 +1,4 @@
+from kotlin_templates import TEMPLATES
 #!/usr/bin/env python3
 
 import json
@@ -24,7 +25,7 @@ for item in data.get("changes", []):
         "file": item["file"],
         "language": "kotlin",
         "action": item.get("action", "generate_or_modify"),
-        "content": item.get("content") or "package com.oranride.app\n\n// Sidox generated Kotlin code\n"
+        "content": item.get("content") or TEMPLATES.get(Path(item["file"]).name, "// Sidox generated Kotlin code\n")
     })
 
 OUTPUT.write_text(

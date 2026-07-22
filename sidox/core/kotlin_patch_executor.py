@@ -38,6 +38,11 @@ for item in data.get("files", []):
     if content.strip():
         file.write_text(content, encoding="utf-8")
 
+    if not file.exists():
+        shutil.copy2(str(file) + ".bak", file)
+        print("Rollback:", file)
+        continue
+
     results.append(str(file))
     print("Modified:", file)
 
