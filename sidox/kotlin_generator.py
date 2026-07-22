@@ -1,3 +1,4 @@
+from pathlib import Path
 import json
 from datetime import datetime
 
@@ -6,6 +7,21 @@ with open("sidox/user_task.json") as f:
 
 req=t.get("request","").lower()
 files=[]
+targets = []
+try:
+    import json
+    plan=json.load(open("sidox/task_plan.json"))
+    targets=plan.get("targets",[])
+except:
+    pass
+
+for name in targets:
+    result=list(Path(".").rglob(name))
+    if result:
+        files.append({
+            "file": str(result[0]),
+            "content": f"// Sidox generated update for {name}"
+        })
 
 if "indrive" in req or "passenger" in req or "tracking" in req:
     files=[
