@@ -1,36 +1,97 @@
 #!/usr/bin/env python3
+
 import json
 from pathlib import Path
 from datetime import datetime
 
-task = Path("sidox/user_task.json")
-out = Path("sidox/task_plan.json")
+TASK_FILE = Path("sidox/user_task.json")
+PLAN_FILE = Path("sidox/task_plan.json")
+PATCH_FILE = Path("sidox/code_patch.json")
 
-if not task.exists():
+BASE = Path("app/src/main/java/com/oranride/app")
+
+KEYWORDS = {
+    "driver": [
+        "Driver.kt",
+        "DriverViewModel.kt"
+    ],
+    "map": [
+        "RealMap.kt",
+        "LocationManager.kt"
+    ],
+    "search": [
+        "SearchBar.kt",
+        "NominatimRepository.kt"
+    ],
+    "ride": [
+        "RideRequest.kt",
+        "RideViewModel.kt"
+    ]
+}
+
+if not TASK_FILE.exists():
     print("Create sidox/user_task.json first")
-    exit()
+    raise SystemExit(1)
 
-data=json.loads(task.read_text(encoding="utf-8"))
-request=data.get("task","")
+task = json.loads(
+    TASK_FILE.read_text(
+        encoding="utf-8"
+    )
+)
 
-plan={
-    "time":datetime.now().isoformat(),
-    "task":request,
-    "targets":[],
-    "action":"analyze"
+request = task.get(
+    "task",
+    ""
+).lower()
+
+plan = {
+    "time": datetime.now().isoformat(),
+    "task": request,
+    "action": "analyze",
+    "targets": []
 }
 
-keywords={
-    "driver":["Driver.kt","DriverViewModel.kt"],
-    "map":["RealMap.kt","LocationManager.kt"],
-    "search":["SearchBar.kt","NominatimRepository.kt"],
-    "ride":["RideRequest.kt","RideViewModel.kt"]
+for keyword, files in KEYWORDS.items():
+    if keyword in request:
+        for f in files:
+            if f not in plan["targets"]:
+                plan["targets"].append(f)
+
+PLAN_FILE.write_text(
+    json.dumps(
+        plan,
+        indent=2,
+        ensure_ascii=False
+    ),
+    encoding="utf-8"
+)
+
+patch = {
+    "time": datetime.now().isoformat(),
+    "approved": False,
+    "targets": [],
+    "changes": []
 }
 
-for k,files in keywords.items():
-    if k.lower() in request.lower():
-        plan["targets"].extend(files)
+for name in plan["targets"]:
+    path = BASE / name
+    if path.exists():
+        patch["targets"].append(str(path))
+        patch["changes"].append({
+            "file": str(path),
+            "action": "generate_or_modify",
+            "content": ""
+        })
 
-out.write_text(json.dumps(plan,indent=2,ensure_ascii=False))
+PATCH_FILE.write_text(
+    json.dumps(
+        patch,
+        indent=2,
+        ensure_ascii=False
+    ),
+    encoding="utf-8"
+)
+
 print("Task plan generated")
-print("Targets:",plan["targets"])
+print("Targets:", plan["targets"])
+print("Changes:", len(patch["changes"]))

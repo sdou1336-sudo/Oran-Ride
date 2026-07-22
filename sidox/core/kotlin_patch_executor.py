@@ -1,44 +1,51 @@
 #!/usr/bin/env python3
+
 import json
+import shutil
+import argparse
 from pathlib import Path
 from datetime import datetime
 
-patch = Path("sidox/kotlin_patch.json")
-log = Path("sidox/kotlin_execution_log.json")
+parser = argparse.ArgumentParser()
+parser.add_argument("--auto-approve", action="store_true")
+args = parser.parse_args()
 
-if not patch.exists():
+PATCH = Path("sidox/generated_kotlin_patch.json")
+LOG = Path("sidox/kotlin_execution_log.json")
+
+if not PATCH.exists():
     print("No Kotlin patch found")
-    exit()
+    raise SystemExit(1)
 
-data = json.loads(patch.read_text(encoding="utf-8"))
+data = json.loads(PATCH.read_text(encoding="utf-8"))
 
-if not data.get("approved", False):
+if not args.auto_approve and not data.get("approved", False):
     print("Kotlin patch not approved")
-    exit()
+    raise SystemExit(1)
 
-results=[]
+results = []
 
 for item in data.get("files", []):
-    file=Path(item["file"])
+    file = Path(item["file"])
 
-    if file.exists():
-        old=file.read_text(encoding="utf-8")
-        file.write_text(
-            old + "\n\n// Sidox modification\n",
-            encoding="utf-8"
-        )
-        results.append(str(file))
-        print("Modified:", file)
-    else:
+    if not file.exists():
         print("Missing:", file)
+        continue
 
-log={
-    "time":datetime.now().isoformat(),
-    "modified":results
-}
+    shutil.copy2(file, str(file) + ".bak")
 
-log.write_text(
-    json.dumps(log,indent=2,ensure_ascii=False),
+    content = item.get("content", "")
+    if content.strip():
+        file.write_text(content, encoding="utf-8")
+
+    results.append(str(file))
+    print("Modified:", file)
+
+LOG.write_text(
+    json.dumps({
+        "time": datetime.now().isoformat(),
+        "modified": results
+    }, indent=2, ensure_ascii=False),
     encoding="utf-8"
 )
 

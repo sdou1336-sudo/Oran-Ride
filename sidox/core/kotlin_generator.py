@@ -1,33 +1,41 @@
 #!/usr/bin/env python3
+
 import json
 from pathlib import Path
 from datetime import datetime
 
-source = Path("sidox/code_patch.json")
-out = Path("sidox/kotlin_patch.json")
+SOURCE = Path("sidox/code_patch.json")
+OUTPUT = Path("sidox/generated_kotlin_patch.json")
 
-data = json.loads(source.read_text()) if source.exists() else {}
+if not SOURCE.exists():
+    print("No code patch found")
+    raise SystemExit(1)
+
+data = json.loads(SOURCE.read_text(encoding="utf-8"))
 
 patch = {
     "time": datetime.now().isoformat(),
-    "type": "kotlin_generation",
-    "approved": False,
+    "approved": data.get("approved", False),
     "files": []
 }
 
 for item in data.get("changes", []):
     patch["files"].append({
-        "file": item.get("file"),
+        "file": item["file"],
         "language": "kotlin",
-        "action": "generate_or_modify",
-        "content": "// Sidox Kotlin patch placeholder"
+        "action": item.get("action", "generate_or_modify"),
+        "content": item.get("content") or "package com.oranride.app\n\n// Sidox generated Kotlin code\n"
     })
 
-out.write_text(
-    json.dumps(patch, indent=2, ensure_ascii=False),
+OUTPUT.write_text(
+    json.dumps(
+        patch,
+        indent=2,
+        ensure_ascii=False
+    ),
     encoding="utf-8"
 )
 
 print("Kotlin Generator ready")
 print("Files:", len(patch["files"]))
-print("Saved:", out)
+print("Saved:", OUTPUT)
